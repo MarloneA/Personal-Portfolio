@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -40,10 +40,10 @@ const config = {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
+        // accent: {
+        //   DEFAULT: "hsl(var(--accent))",
+        //   foreground: "hsl(var(--accent-foreground))",
+        // },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -52,6 +52,13 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        dark: "#1b1b1b",
+        light: "#fff",
+        accent: "#7B00D3",
+        accentDark: "#ffc65c",
+        gray: "#747474",
+
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -67,14 +74,34 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        roll: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        roll: "roll 24s linear infinite"
       },
+      screens: {
+        sxl: "1180px",
+        // @media (min-width: 1180px){...}
+        xs: "480px"
+        // @media (min-width: 480px){...}
+      },
+      fontFamily: {
+        mr: ["var(--font-mr)"],
+        in: ["var(--font-in)"]
+      }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
+
 } satisfies Config
 
 export default config

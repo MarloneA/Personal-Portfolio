@@ -1,6 +1,8 @@
+"use client";
+
 import { CopyIcon } from "@radix-ui/react-icons";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/__ui__/button";
 import {
   Dialog,
   DialogClose,
@@ -10,15 +12,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@/components/__ui__/dialog";
+import { Input } from "@/components/__ui__/input";
+import { Label } from "@/components/__ui__/label";
+import { InlineWidget } from "react-calendly";
 
 export function Booking() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="w-60 border-2 dark:border-white dark:bg-white  border-black bg-black px-6 dark:text-black text-white p-4 rounded-full mr-6 hover:bg-slate-700">
+        <button className="w-60 text-sm border-2 dark:border-white dark:bg-white  border-black bg-black p-3 md:px-6 dark:text-black text-white md:p-4 mr-6 hover:bg-accentDark hover:text-black">
           book a consultation
         </button>
       </DialogTrigger>
@@ -26,9 +29,15 @@ export function Booking() {
         <DialogHeader>
           <DialogTitle>Book a meeting</DialogTitle>
           <DialogDescription>
-            Please use this link to book a meeting with me.
+            Please use this calendar to book a session with me.
           </DialogDescription>
         </DialogHeader>
+        <InlineWidget url="https://calendly.com/marloneakidiva/30min" />
+        <DialogDescription className="text-center">or</DialogDescription>
+        <DialogDescription className="text-center">
+          Copy this link to book a meeting with me
+        </DialogDescription>
+
         <div className="flex items-center space-x-2">
           <div className="grid flex-1 gap-2">
             <Label htmlFor="link" className="sr-only">

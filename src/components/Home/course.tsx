@@ -1,6 +1,4 @@
-import { CopyIcon } from "@radix-ui/react-icons";
-
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/__ui__/button";
 import {
   Dialog,
   DialogClose,
@@ -10,21 +8,21 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@/components/__ui__/dialog";
+import { Input } from "@/components/__ui__/input";
+import { Label } from "@/components/__ui__/label";
 
 export function Course() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="border-2 dark:border-white border-black p-4 px-6 rounded-full w-60 hover:bg-slate-100 ">
+        <button className="border-2 text-sm dark:border-white border-black p-3 md:p-4 md:px-6 w-60 hover:bg-accentDark ">
           take a course
         </button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Take a course</DialogTitle>
+          <DialogTitle>Coming soon!</DialogTitle>
           <DialogDescription>
             I'm working on something special, subscribe to my newsletter to be
             notified as soon as i drop the course

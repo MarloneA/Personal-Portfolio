@@ -1,19 +1,18 @@
 import Image from "next/image";
-import Navigation from "./components/navigation";
-import LandingPage from "./components/landingPage";
-import AboutMe from "./components/about";
-import Work from "./components/work";
-import Footer from "./components/footer";
+import Navigation from "@/components/Header/navigation";
+import LandingPage from "@/components/Home/landingPage";
+import AboutMe from "@/components/Home/about";
+import Work from "@/components/Home/work";
+import Footer from "@/components/Footer/footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-12 max-w-screen-2xl m-auto snap-y snap-mandatory overflow-y-scroll">
+    <main className="flex flex-col items-center justify-between p-8 lg:p-12 max-w-screen-2xl m-auto">
       <div className="w-full">
-        <Navigation />
         <LandingPage />
       </div>
 
-      <div className="mb-24 w-full">
+      {/* <div className="mb-24 w-full">
         <AboutMe />
       </div>
 
@@ -24,7 +23,7 @@ export default function Home() {
         <Work />
       </div>
 
-      {/* <h1>Client Testimonials</h1>
+      <h1>Client Testimonials</h1>
       <section>
         <div>
           <h1>Here's what other people think about my work</h1>
@@ -32,9 +31,6 @@ export default function Home() {
         </div>
         <div></div>
       </section> */}
-
-      <Footer />
-      <div className="text-left pt-24">All rights reserved c Marlone Akidiva 2024</div>
     </main>
   );
 }

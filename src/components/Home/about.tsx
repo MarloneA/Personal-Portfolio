@@ -2,7 +2,7 @@ import React from "react";
 
 import { CopyIcon } from "@radix-ui/react-icons";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/__ui__/button";
 import {
   Dialog,
   DialogClose,
@@ -12,9 +12,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+} from "@/components/__ui__/dialog";
+import { Input } from "@/components/__ui__/input";
+import { Label } from "@/components/__ui__/label";
 
 export function Booking() {
   return (
@@ -76,7 +76,7 @@ export default function AboutMe() {
           </h4>
           <Booking />
         </div>
-        <div className=" bg-black h-96 w-1/2">
+        <div className="bg-black h-96 w-1/2">
           <iframe
             width="720"
             height="385"
