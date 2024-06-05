@@ -16,7 +16,7 @@ export function Course() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="border-2 text-sm dark:border-white border-black p-3 md:p-4 md:px-6 w-60 hover:bg-accentDark ">
+        <button className="border-2 min-w-fit text-sm dark:border-white border-black p-3 md:p-4 md:px-6 w-60 hover:bg-accentDark ">
           take a course
         </button>
       </DialogTrigger>

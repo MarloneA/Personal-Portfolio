@@ -1,5 +1,4 @@
-// please update required information
-const siteMetadata = {
+export const siteMetadata = {
   title: "Marlone Akidiva",
   author: "marlone",
   headerTitle: "Personal Landing Page",
@@ -9,14 +8,14 @@ const siteMetadata = {
   siteUrl: "https://create-blog-with-nextjs.vercel.app", // your website URL
   siteLogo: "/logo.png",
   socialBanner: "/social-banner.png", // add social banner in the public folder
-  email: "codebucks27@gmail.com",
-  github: "https://github.com/codebucks27",
+  email: "marlone911@gmail.com",
+  github: "https://github.com/marlonea",
   twitter: "https://twitter.com/code_bucks",
   facebook: "https://facebook.com",
-  youtube: "https://youtube.com/codebucks",
-  linkedin: "https://www.linkedin.com/in/codebucks/",
+  youtube: "https://youtube.com/marlone",
+  linkedin: "https://www.linkedin.com/in/marlone-akidiva/",
   dribbble: "https://www.dribbble.com",
   locale: "en-US",
 };
 
-module.exports = siteMetadata;
+

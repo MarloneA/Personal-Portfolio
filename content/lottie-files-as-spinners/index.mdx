@@ -1,0 +1,124 @@
+---
+title: "Lottie Files: From Jest to Disco Robots"
+description: "Join us on a hilarious journey as we explore the unexpected evolution of using Lottie files in web development."
+image: "../../public/blogs/kelly-sikkema--1_RZL8BGBM-unsplash.jpg"
+publishedAt: "2024-05-24"
+updatedAt: "2024-05-24"
+author: "codebucks"
+isPublished: true
+tags:
+  - Lottie
+  - Web Development
+  - Humor
+---
+
+In the wild world of web development, there are trends that come and go faster than a cat chasing a laser pointer. But perhaps none are as bizarrely hilarious as the recent phenomenon of using Lottie files as spinners. Yes, you read that right. Lottie files, those delightful little animations, are now being repurposed as loading spinners. How did we get here? Join us on a side-splitting journey as we explore this unexpected turn of events.
+
+## The Rise of Lottie Files
+
+Lottie files burst onto the scene like a technicolor explosion, bringing with them a wave of excitement and creativity. Developed by the team at Airbnb, Lottie allows developers to effortlessly integrate vibrant, vector-based animations into their web and mobile applications. From bouncing balls to dancing unicorns, the possibilities seemed endless.
+
+## The Spinner Dilemma
+
+Ah, the humble spinner. The unsung hero of web development, tirelessly spinning away as users wait impatiently for content to load. But let's face it, traditional spinners are about as exciting as watching paint dry. Developers yearned for something more, something...animated.
+
+## Enter the Lottie Spinner
+
+And thus, the Lottie spinner was born. What started as a joke in a late-night coding session quickly gained traction within the developer community. "Why settle for a boring old spinner when you can have a Lottie animation?" became the rallying cry.
+
+### Using Lottie Files as Spinners
+
+Using Lottie files as spinners is surprisingly easy, and the results are sure to bring a smile to your users' faces. Here's how you can do it:
+
+#### Step 1: Choose Your Lottie Animation
+
+First, you'll need to choose a Lottie animation to use as your spinner. You can create your own custom animation or find one from the vast library of pre-made animations available online.
+
+#### Step 2: Import Lottie Library
+
+Make sure you have the Lottie library installed in your project. You can install it via npm or yarn:
+
+```bash
+npm install --save lottie-web
+```
+
+or
+
+```bash
+yarn add lottie-web
+```
+
+#### Step 3: Import Your Lottie File
+
+Next, import your chosen Lottie animation file into your project:
+
+```javascript
+import lottie from "lottie-web";
+import spinnerAnimation from "./spinner.json"; // Replace 'spinner.json' with the path to your Lottie animation file
+```
+
+#### Step 4: Create a Container Element
+
+Create a container element in your HTML where you want the spinner to appear:
+
+```html
+<div id="spinner-container"></div>
+```
+
+#### Step 5: Initialize the Lottie Animation
+
+In your JavaScript code, initialize the Lottie animation on the container element:
+
+```javascript
+const container = document.getElementById("spinner-container");
+const animation = lottie.loadAnimation({
+  container,
+  animationData: spinnerAnimation,
+  renderer: "svg", // Use 'svg' renderer for better performance
+  loop: true, // Optional: Set to true if you want the animation to loop
+  autoplay: true, // Optional: Set to true to automatically start the animation
+});
+```
+
+And that's it! Your Lottie file is now serving double duty as a delightful spinner in your web application.
+
+### Example: React Component
+
+If you're using React, you can create a reusable spinner component like this:
+
+```javascript
+import React, { useEffect, useRef } from "react";
+import lottie from "lottie-web";
+import spinnerAnimation from "./spinner.json";
+
+const LottieSpinner = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const animation = lottie.loadAnimation({
+      container,
+      animationData: spinnerAnimation,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+    });
+
+    return () => {
+      animation.destroy(); // Clean up animation when component unmounts
+    };
+  }, []);
+
+  return <div ref={containerRef}></div>;
+};
+
+export default LottieSpinner;
+```
+
+Now you can simply use `<LottieSpinner />` wherever you need a spinner in your React application.
+
+## Conclusion
+
+Using Lottie files as spinners adds a touch of whimsy and personality to your web applications. With just a few lines of code, you can transform a mundane loading screen into a delightful experience that will leave your users smiling.
+
+So whether you're using Lottie files to make your spinners do the Macarena or dance like disco robots, one thing's for sure: in the ever-changing landscape of web development, one must always expect the unexpected.

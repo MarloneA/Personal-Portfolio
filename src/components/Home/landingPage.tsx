@@ -1,24 +1,29 @@
 import React from "react";
-// import Image from "next/image";
+import { BentoGridSection } from "./bentoGrid";
 import { Booking } from "./booking";
 import { Course } from "./course";
-import { BentoGridSecondDemo, BentoGridThirdDemo } from "./bentoGrid";
 import Link from "next/link";
 
 export default function LandingPage() {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <section className="flex flex-col lg:flex-row w-full h-4/6 justify-between">
         <div className="w-1\2 flex flex-col justify-center items-center lg:items-start">
-          <h2 className="leading-snug	text-2xl sm:text-3xl md:text-4xl dark:text-white text-black motion-safe:animate-hero-text-reveal md:pt-4">
+          <h2 className="hidden sm:block leading-snug	text-2xl sm:text-3xl md:text-4xl dark:text-white text-black motion-safe:animate-hero-text-reveal md:pt-4">
             Welcome to my digital realm!
-            <br />
-            so you wanna create top-tier <br /> software? Let's dive in and
-            <br /> make amazing things happen <br /> together!
+            <br /> I'm Marlone, a lovely human who just happens to be writing
+            code. <br />
           </h2>
+
+          <h2 className="sm:hidden text-center leading-snug	text-2xl sm:text-3xl md:text-4xl dark:text-white text-black motion-safe:animate-hero-text-reveal md:pt-4">
+            Welcome to my digital realm! so you wanna create top-tier software?
+            Let's dive in and make amazing things happen together!
+          </h2>
+
           <h4 className="pt-10 w-[90%] text-center lg:text-left">
-            Having worked with products that have raised more than $100m in
-            funding, I understand what it takes to make your product a success.
+            I've worked with products that have raised more than $100m in
+            funding and thus I understand what it takes to build great software.
+            Feel free to engage with me by either having a call or interacting with any of my courses.
           </h4>
           <div className="flex py-2 w-full my-10 justify-center items-center lg:justify-start">
             <Booking />
@@ -46,15 +51,7 @@ export default function LandingPage() {
             </Link>
           </div>
         </div>
-        <BentoGridSecondDemo />
-        {/* <Image
-          className="relative h-[650px]"
-          src="/jsTEch.png"
-          alt="Next.js Logo"
-          width={800}
-          height={2000}
-          priority
-        /> */}
+        <BentoGridSection />
       </section>
     </div>
   );
