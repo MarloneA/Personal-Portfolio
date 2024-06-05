@@ -3,16 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-
 import {
   IconClipboardCopy,
   IconFileBroken,
   IconSignature,
   IconTableColumn,
-  IconBoxAlignRightFilled,
 } from "@tabler/icons-react";
 import Link from "next/link";
+import { allBlogs } from "../../../.contentlayer/generated";
 
 export const BentoGrid = ({
   className,
@@ -70,10 +68,29 @@ export const BentoGridItem = ({
   );
 };
 
-export function BentoGridSecondDemo() {
+export function BentoGridSection() {
+  // const shuffledBlogs = allBlogs.sort(() => 0.5 - Math.random());
+
+  const bentoContent = allBlogs.slice(0, 4).map((blog, index) => {
+    let className;
+    if (index === 0 || index === 3) {
+      className = "md:col-span-2";
+    } else {
+      className = "md:col-span-1";
+    }
+
+    return {
+      ...blog,
+      header: <Skeleton src={blog?.image?.filePath.replace("../public", "")} />,
+      className: className,
+      icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+      url: `blogs/${blog._id.replace("/index.mdx", "")}`,
+    };
+  });
+
   return (
     <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-      {items.map((item, i) => (
+      {bentoContent.map((item, i) => (
         <BentoGridItem
           key={i}
           title={item.title}
@@ -99,39 +116,5 @@ const Skeleton = ({ src }: { src: string }) => (
     />
   </div>
 );
-const items = [
-  {
-    title: "The Art of Zen",
-    description: "Mindfulness And Meditation Techniques For Developers.",
-    header: <Skeleton src="/blogs/c-d-x-PDX_a_82obo-unsplash.jpg" />,
-    className: "md:col-span-2",
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-    url: "blogs/mindfulness-and-meditation-techniques-for-developers-improving-focus-and-clarity",
-  },
-  {
-    title: "web developement tools",
-    description: "10 Essential Web Development Tools For Productivity.",
-    header: <Skeleton src="/blogs/lauren-mancke-aOC7TSLb1o8-unsplash.jpg" />,
-    className: "md:col-span-1",
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-    url: "/blogs/web-development-tools-productivity",
-  },
-  {
-    title: "Best Practices For Web Accessibility",
-    description: "Discover how to Build Inclusive Websites.",
-    header: <Skeleton src="/blogs/marvin-meyer-SYTO3xs06fU-unsplash.jpg" />,
-    className: "md:col-span-1",
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-    url: "/blogs/web-accessibility-best-practices",
-  },
-  {
-    title: "The Power Of JavaScript Frameworks",
-    description: "Understand the impact of Angular, React and Vue.Js.",
-    header: (
-      <Skeleton src="/blogs/paul-esch-laurent-oZMUrWFHOB4-unsplash.jpg" />
-    ),
-    className: "md:col-span-2",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-    url: "/blogs/js-frameworks-comparison",
-  },
-];
+
+

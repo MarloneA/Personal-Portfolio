@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { projects } from "../../../projects";
 
 export const metadata = {
   title: "Projects",
@@ -28,6 +29,12 @@ export default function MyProjects() {
               they could that they didn't stop to think if they should."&nbsp;
             </span>
             <span
+              className="italic text-xs inline-block float-end"
+              style={{ opacity: 1, transform: "none" }}
+            >
+              Jurassic Park&nbsp;
+            </span>
+            <span
               className="italic text-3xl inline-block float-end"
               style={{ opacity: 1, transform: "none" }}
             >
@@ -47,9 +54,10 @@ export default function MyProjects() {
               description,
               featured,
             } = project;
+
             return (
               <div className="col-span-12" key={id}>
-                <article className="relative flex flex-col w-full items-center justify-between rounded-3xl rounded-br-2xl border border-solid border-dark bg-light p-2 py-6 shadow-2xl dark:border-light dark:bg-dark lg:flex-row lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4">
+                <article className="relative flex flex-col w-full items-center justify-between rounded-3xl rounded-br-2xl border border-solid border-light bg-light p-2 py-6 shadow-2xl dark:border-light dark:bg-dark lg:flex-row lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4">
                   <a
                     target="_blank"
                     className="w-11/12 cursor-pointer overflow-hidden rounded-lg lg:w-full"
@@ -67,7 +75,7 @@ export default function MyProjects() {
                   <div className="flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
                     {featured && (
                       <span className="text-xl pt-4 lg:pt-0 font-medium text-accent dark:text-primaryDark xs:text-base">
-                        Featured Project
+                        Coming Soon
                       </span>
                     )}
                     <a
@@ -86,7 +94,7 @@ export default function MyProjects() {
                       <a
                         target="_blank"
                         className="w-10"
-                        aria-label="Crypto Screener Application github link"
+                        aria-label={`${title} github link`}
                         href={githubUrl}
                       >
                         <svg
@@ -122,52 +130,3 @@ export default function MyProjects() {
     </main>
   );
 }
-
-const projects = [
-  {
-    id: "1",
-    projectUrl:
-      "https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css",
-    imgUrl: "/blogs/c-d-x-PDX_a_82obo-unsplash.jpg",
-    title: "Crypto Screener Application",
-    description: ` A feature-rich Crypto Screener App using React, Tailwind CSS,
-    Context API, React Router, and Recharts. It shows detail
-    regarding almost all the cryptocurrency. You can easily
-    convert the price in your local currency.`,
-    githubUrl: "https://github.com/codebucks27/CryptoBucks-Final-Code",
-    featured: true,
-  },
-  {
-    id: "2",
-    projectUrl:
-      "https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css",
-    imgUrl: "/blogs/lauren-mancke-aOC7TSLb1o8-unsplash.jpg",
-    title: "Crypto Screener Application",
-    description:
-      "A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router, and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency.",
-    githubUrl: "https://github.com/codebucks27/CryptoBucks-Final-Code",
-    featured: true,
-  },
-  {
-    id: "3",
-    projectUrl:
-      "https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css",
-    imgUrl: "/blogs/marvin-meyer-SYTO3xs06fU-unsplash.jpg",
-    title: "Crypto Screener Application",
-    description:
-      "A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router, and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency.",
-    githubUrl: "https://github.com/codebucks27/CryptoBucks-Final-Code",
-    featured: true,
-  },
-  {
-    id: "4",
-    projectUrl:
-      "https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css",
-    imgUrl: "/blogs/paul-esch-laurent-oZMUrWFHOB4-unsplash.jpg",
-    title: "Crypto Screener Application",
-    description:
-      "A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router, and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency.",
-    githubUrl: "https://github.com/codebucks27/CryptoBucks-Final-Code",
-    featured: true,
-  },
-];

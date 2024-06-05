@@ -21,7 +21,7 @@ export function Booking() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="w-60 text-sm border-2 dark:border-white dark:bg-white  border-black bg-black p-3 md:px-6 dark:text-black text-white md:p-4 mr-6 hover:bg-accentDark hover:text-black">
+        <button className="w-60 min-w-fit text-sm border-2 dark:border-white dark:bg-white  border-black bg-black p-3 md:px-6 dark:text-black text-white md:p-4 mr-6 hover:bg-accentDark hover:text-black">
           book a consultation
         </button>
       </DialogTrigger>

@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,8 +13,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Button } from "../ui/button";
+} from "@/components/__ui__/alert-dialog";
+import { Button } from "../__ui__/button";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import { IconX } from "@tabler/icons-react";
@@ -23,61 +23,53 @@ const Navigation = () => {
   const [isOpen, setisOpen] = useState(false);
 
   const pathname = usePathname();
+
+  const navItems = [
+    { href: "/blogs", label: "writing", match: pathname.includes("/blogs") },
+    // { href: "#", label: "courses", match: pathname === "/courses" },
+    // { href: "#", label: "community", match: false },
+    // {
+    //   href: "/projects",
+    //   label: "projects",
+    //   match: pathname.includes("projects"),
+    // },
+    {
+      href: "/videos",
+      label: "videos",
+      match: pathname.includes("videos"),
+    },
+    // { href: "/events", label: "events", match: pathname.includes("events") },
+    { href: "/about", label: "about", match: pathname === "/about" },
+    { href: "/contact", label: "contact", match: pathname === "/contact" },
+  ];
+
+  const getClassName = (match) =>
+    cn(
+      "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer mx-3",
+      match && "!border-b-4 !border-b-black"
+    );
   return (
     <div className="flex flex-col items-center justify-between p-4 md:pb-8 lg:p-8 max-w-screen-2xl m-auto">
-      <nav className="flex w-full justify-between items-center lg:p-2">
+      <nav className="flex w-full justify-between items-center lg:p-2 pr-[2.1rem]">
         <h1
           className={cn(
             "text-primary underlined block whitespace-nowrap text-[1.2rem] md:text-2xl font-medium transition focus:outline-none border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
             pathname === "/" && "!border-b-4 !border-b-black"
           )}
         >
-          <Link href="/">Marlone Akidiva </Link>
+          <Link href="/">Port:3000 </Link>
         </h1>
-        <ul className="hidden lg:flex lg:justify-around lg:w-[30rem] lg:capitalize lg:font-semibold ">
-          <li
-            className={cn(
-              "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
-              pathname.includes("/blogs") && "!border-b-4 !border-b-black"
-            )}
-          >
-            <Link href="/blogs">writing</Link>
-          </li>
-          <li
-            className={cn(
-              "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
-              pathname === "/courses" && "!border-b-4 !border-b-black"
-            )}
-          >
-            courses
-          </li>
-          <li className="border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer">
-            discord
-          </li>
-          <li
-            className={cn(
-              "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
-              pathname.includes("projects") && "!border-b-4 !border-b-black"
-            )}
-          >
-            <Link href="/projects">projects</Link>
-          </li>
-          <li
-            className={cn(
-              "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
-              pathname === "/about" && "!border-b-4 !border-b-black"
-            )}
-          >
-            <Link href="/about">about</Link>
-          </li>
-          <li
-            className={cn(
-              "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
-              pathname === "/contact" && "!border-b-4 !border-b-black"
-            )}
-          >
-            <Link href="/contact">contact</Link>
-          </li>
+
+        <ul className="hidden lg:flex lg:justify-around lg:capitalize lg:font-semibold">
+          {navItems.map((item, index) => (
+            <li key={index} className={getClassName(item.match)}>
+              {item.href === "#" ? (
+                item.label
+              ) : (
+                <Link href={item.href}>{item.label}</Link>
+              )}
+            </li>
+          ))}
         </ul>
 
         <div className="">

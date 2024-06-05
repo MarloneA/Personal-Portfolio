@@ -88,16 +88,6 @@ export default function Work() {
             <button className="border-2 w-full border-black p-1">join</button>
           </div>
         </div>
-        {/* <div className="p-10 border-2 border-black">
-          <h1 className="font-semibold">work</h1>
-          <ul>
-            <li>Clearlabs</li>
-            <li>Valtech</li>
-            <li>Royal Canine</li>
-            <li>Andela</li>
-          </ul>
-          <button>download CV</button>
-        </div> */}
       </div>
     </section>
   );
