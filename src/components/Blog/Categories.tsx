@@ -4,7 +4,7 @@ import Category from "./Category";
 
 const Categories = ({ categories, currentSlug }) => {
   return (
-    <div className=" px-0 md:px-10 sxl:px-20 mt-10 border-t-2 text-dark dark:text-light border-b-2 border-solid border-dark dark:border-light py-4 flex items-start flex-wrap font-medium mx-5 md:mx-[7.5rem]">
+    <div className="flex flex-wrap items-start border-dark mx-5 md:mx-[7.5rem] mt-10 px-0 py-4 border-t-2 border-b-2 dark:border-light border-solid font-medium text-dark dark:text-light">
       {categories.map((cat) => (
         <Category
           key={cat}

@@ -9,16 +9,16 @@ export const metadata = {
 
 export default function MyProjects() {
   return (
-    <main className="p-4 mb-16 flex w-full flex-col items-center justify-center dark:text-light">
-      <div className="z-0 inline-block h-full w-full bg-light dark:bg-dark xl:p-24 lg:p-16 md:p-12 sm:p-8 pt-16">
+    <main className="flex flex-col justify-center items-center mb-16 p-4 w-full dark:text-light">
+      <div className="inline-block z-0 bg-light dark:bg-dark sm:p-8 md:p-12 lg:p-16 xl:p-24 pt-16 w-full h-full">
         {/* title */}
-        <div className="lg:p-16 w-full mx-auto flex flex-col items-center justify-center text-center overflow-hidden sm:py-0">
-          <blockquote className="mb-10 border-l-2 pl-6 italic">
+        <div className="flex flex-col justify-center items-center mx-auto sm:py-0 lg:p-16 w-full text-center overflow-hidden">
+          <blockquote className="mb-10 pl-6 border-l-2 italic">
             "I don't think you're giving us our due credit. Our scientists have
             done things which nobody's ever done before..."
           </blockquote>
           <h1
-            className="inline-block text-4xl text-dark dark:text-light font-bold w-full capitalize mb-16 !leading-tight lg:!text-7xl sm:mb-8 xl:text-6xl"
+            className="inline-block mb-16 sm:mb-8 w-full font-bold text-4xl text-dark lg:!text-7xl xl:text-6xl dark:text-light capitalize !leading-tight"
             style={{ opacity: 1 }}
           >
             <span
@@ -29,13 +29,13 @@ export default function MyProjects() {
               they could that they didn't stop to think if they should."&nbsp;
             </span>
             <span
-              className="italic text-xs inline-block float-end"
+              className="inline-block float-end text-xs italic"
               style={{ opacity: 1, transform: "none" }}
             >
               Jurassic Park&nbsp;
             </span>
             <span
-              className="italic text-3xl inline-block float-end"
+              className="inline-block float-end text-3xl italic"
               style={{ opacity: 1, transform: "none" }}
             >
               ~ Dr. Ian Malcolm&nbsp;
@@ -43,7 +43,7 @@ export default function MyProjects() {
           </h1>
         </div>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 ">
+        <div className="flex flex-col gap-24 gap-y-32 sm:gap-x-0 md:gap-y-24 lg:gap-x-8 xl:gap-x-16 lg:grid lg:grid-cols-12">
           {projects.map((project) => {
             const {
               id,
@@ -57,10 +57,10 @@ export default function MyProjects() {
 
             return (
               <div className="col-span-12" key={id}>
-                <article className="relative flex flex-col w-full items-center justify-between rounded-3xl rounded-br-2xl border border-solid border-light bg-light p-2 py-6 shadow-2xl dark:border-light dark:bg-dark lg:flex-row lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4">
+                <article className="relative flex lg:flex-row flex-col justify-between items-center bg-light dark:bg-dark shadow-2xl py-6 p-2 lg:p-8 xs:p-4 border border-light dark:border-light border-solid rounded-3xl xs:rounded-2xl rounded-br-2xl xs:rounded-br-3xl w-full">
                   <a
                     target="_blank"
-                    className="w-11/12 cursor-pointer overflow-hidden rounded-lg lg:w-full"
+                    className="rounded-lg w-11/12 lg:w-full cursor-pointer overflow-hidden"
                     href={projectUrl}
                   >
                     <Image
@@ -68,13 +68,13 @@ export default function MyProjects() {
                       alt="demo"
                       width="1280"
                       height="720"
-                      className="h-auto w-full lg:w-11/12"
+                      className="w-full lg:w-11/12 h-auto"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </a>
-                  <div className="flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
+                  <div className="flex flex-col justify-between items-start lg:pt-6 pl-6 lg:pl-0 lg:w-1/3">
                     {featured && (
-                      <span className="text-xl pt-4 lg:pt-0 font-medium text-accent dark:text-primaryDark xs:text-base">
+                      <span className="pt-4 lg:pt-0 font-medium text-accent text-xl dark:text-primaryDark xs:text-base">
                         Coming Soon
                       </span>
                     )}
@@ -83,14 +83,14 @@ export default function MyProjects() {
                       className="underline-offset-2 hover:underline"
                       href="https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css"
                     >
-                      <h2 className="my-2 w-full text-left text-4xl font-bold lg:text-3xl xs:text-2xl">
+                      <h2 className="my-2 w-full font-bold text-4xl text-left lg:text-3xl xs:text-2xl">
                         {title}
                       </h2>
                     </a>
-                    <p className="my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">
+                    <p className="my-2 rounded-md font-medium text-dark sm:text-sm dark:text-light">
                       {description}
                     </p>
-                    <div className="mt-2 flex items-center">
+                    <div className="flex items-center mt-2">
                       <a
                         target="_blank"
                         className="w-10"
@@ -113,7 +113,7 @@ export default function MyProjects() {
                       </a>
                       <a
                         target="_blank"
-                        className="ml-4 rounded-lg bg-dark p-2 px-6 text-lg font-semibold text-light dark:bg-light dark:text-dark sm:px-4 sm:text-base"
+                        className="bg-dark dark:bg-light ml-4 px-6 sm:px-4 p-2 rounded-lg font-semibold text-lg text-light sm:text-base dark:text-dark"
                         aria-label="Crypto Screener Application"
                         href={projectUrl}
                       >

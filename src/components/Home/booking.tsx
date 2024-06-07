@@ -1,7 +1,6 @@
 "use client";
 
 import { CopyIcon } from "@radix-ui/react-icons";
-
 import { Button } from "@/components/__ui__/button";
 import {
   Dialog,
@@ -21,7 +20,7 @@ export function Booking() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="w-60 min-w-fit text-sm border-2 dark:border-white dark:bg-white  border-black bg-black p-3 md:px-6 dark:text-black text-white md:p-4 mr-6 hover:bg-accentDark hover:text-black">
+        <button className="border-2 dark:border-white bg-black hover:bg-accentDark dark:bg-white mr-6 md:px-6 p-3 md:p-4 border-black w-60 min-w-fit text-sm text-white hover:text-black dark:text-black">
           book a consultation
         </button>
       </DialogTrigger>
@@ -39,7 +38,7 @@ export function Booking() {
         </DialogDescription>
 
         <div className="flex items-center space-x-2">
-          <div className="grid flex-1 gap-2">
+          <div className="flex-1 gap-2 grid">
             <Label htmlFor="link" className="sr-only">
               Link
             </Label>
@@ -51,7 +50,7 @@ export function Booking() {
           </div>
           <Button type="submit" size="sm" className="px-3">
             <span className="sr-only">Copy</span>
-            <CopyIcon className="h-4 w-4" />
+            <CopyIcon className="w-4 h-4" />
           </Button>
         </div>
         <DialogFooter className="sm:justify-start">

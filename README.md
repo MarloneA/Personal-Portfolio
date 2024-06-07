@@ -110,7 +110,8 @@ Ensure you have Node.js and npm installed. You can download Node.js from [Node.j
 - [ ] Videos Section
 - [ ] Courses Section
 - [ ] Dark Mode
-- [ ] Multi-language Support
+- [ ] SEO
+- [ ] Multi-language Support Translations and internationalisation
     - [ ] Spanish
     - [ ] French
     - [ ] Japanese

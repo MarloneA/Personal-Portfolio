@@ -16,7 +16,7 @@ export function Course() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="border-2 min-w-fit text-sm dark:border-white border-black p-3 md:p-4 md:px-6 w-60 hover:bg-accentDark ">
+        <button className="border-2 dark:border-white hover:bg-accentDark md:px-6 p-3 md:p-4 border-black w-60 min-w-fit text-sm">
           take a course
         </button>
       </DialogTrigger>
@@ -29,7 +29,7 @@ export function Course() {
           </DialogDescription>
         </DialogHeader>
         <div className="flex items-center space-x-2">
-          <div className="grid flex-1 gap-2">
+          <div className="flex-1 gap-2 grid">
             <Label htmlFor="link" className="sr-only">
               Join newsletter
             </Label>

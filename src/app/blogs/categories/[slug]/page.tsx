@@ -57,20 +57,20 @@ const CategoryPage = ({ params }) => {
   });
 
   return (
-    <article className="mt-12 flex flex-col text-dark dark:text-light">
-      <div className=" px-5 sm:px-10  md:px-24  sxl:px-32 flex flex-col">
+    <article className="flex flex-col mt-12 text-dark dark:text-light">
+      <div className="flex flex-col px-5 sm:px-10 md:px-24 sxl:px-32">
         <h1 className="mt-6 font-semibold text-2xl md:text-4xl lg:text-5xl">
           #{params.slug}
         </h1>
-        <span className="mt-2 inline-block">
+        <span className="inline-block mt-2">
           Discover more categories and expand your knowledge!
         </span>
       </div>
       <Categories categories={allCategories} currentSlug={params.slug} />
 
-      <div className="grid  grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 grid-rows-2 gap-16 mt-5 sm:mt-10 md:mt-24 sxl:mt-32 px-5 sm:px-10 md:px-24 sxl:px-32">
+      <div className="gap-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 mt-5 sm:mt-10 md:mt-24 sxl:mt-32 px-5 sm:px-10 md:px-24 sxl:px-32">
         {blogs.map((blog, index) => (
-          <article key={index} className="col-span-1 row-span-1 relative">
+          <article key={index} className="relative col-span-1 row-span-1">
             <BlogLayoutThree blog={blog} />
           </article>
         ))}
