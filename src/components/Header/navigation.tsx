@@ -28,17 +28,17 @@ const Navigation = () => {
     { href: "/blogs", label: "writing", match: pathname.includes("/blogs") },
     // { href: "#", label: "courses", match: pathname === "/courses" },
     // { href: "#", label: "community", match: false },
-    // {
-    //   href: "/projects",
-    //   label: "projects",
-    //   match: pathname.includes("projects"),
-    // },
     {
-      href: "/videos",
-      label: "videos",
-      match: pathname.includes("videos"),
+      href: "/projects",
+      label: "projects",
+      match: pathname.includes("projects"),
     },
-    // { href: "/events", label: "events", match: pathname.includes("events") },
+    // {
+    //   href: "/videos",
+    //   label: "videos",
+    //   match: pathname.includes("videos"),
+    // },
+    // { href: "/events", label: "ccommunity-events", match: pathname.includes("events") },
     { href: "/about", label: "about", match: pathname === "/about" },
     { href: "/contact", label: "contact", match: pathname === "/contact" },
   ];

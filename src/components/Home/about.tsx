@@ -20,7 +20,7 @@ export function Booking() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className=" border-2 border-black bg-white px-6 text-black p-4 rounded-full mr-6 hover:bg-slate-100">
+        <button className="border-2 bg-white hover:bg-slate-100 mr-6 px-6 p-4 border-black rounded-full text-black">
           let's chat about your ideas
         </button>
       </DialogTrigger>
@@ -32,7 +32,7 @@ export function Booking() {
           </DialogDescription>
         </DialogHeader>
         <div className="flex items-center space-x-2">
-          <div className="grid flex-1 gap-2">
+          <div className="flex-1 gap-2 grid">
             <Label htmlFor="link" className="sr-only">
               Link
             </Label>
@@ -44,7 +44,7 @@ export function Booking() {
           </div>
           <Button type="submit" size="sm" className="px-3">
             <span className="sr-only">Copy</span>
-            <CopyIcon className="h-4 w-4" />
+            <CopyIcon className="w-4 h-4" />
           </Button>
         </div>
         <DialogFooter className="sm:justify-start">
@@ -61,11 +61,11 @@ export function Booking() {
 
 export default function AboutMe() {
   return (
-    <section className="grid h-full place-content-center w-full">
-      <div className="bg-black text-white  rounded-2xl flex p-20">
+    <section className="place-content-center grid w-full h-full">
+      <div className="flex bg-black p-20 rounded-2xl text-white">
         <div className="w-1/2">
           <p className="uppercase">about me</p>
-          <h1 className="leading-snug	text-4xl md:text-4xl text-white dark:text-white motion-safe:animate-hero-text-reveal py-10">
+          <h1 className="py-10 text-4xl text-white md:text-4xl dark:text-white leading-snug">
             20 minutes to transform your idea into the next startup success
           </h1>
 
@@ -76,7 +76,7 @@ export default function AboutMe() {
           </h4>
           <Booking />
         </div>
-        <div className="bg-black h-96 w-1/2">
+        <div className="bg-black w-1/2 h-96">
           <iframe
             width="720"
             height="385"

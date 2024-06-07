@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Blog() {
   return (
-    <main className="flex flex-col items-center justify-center">
+    <main className="flex flex-col justify-center items-center m-auto px-24 sm:px-10 max-w-screen-2xl">
       <HomeCoverSection blogs={allBlogs} />
       <FeaturedPosts blogs={allBlogs} />
       <RecentPosts blogs={allBlogs} />

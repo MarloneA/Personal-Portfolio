@@ -7,15 +7,15 @@ import Link from "next/link";
 export default function LandingPage() {
   return (
     <div className="w-full h-full">
-      <section className="flex flex-col lg:flex-row w-full h-4/6 justify-between">
-        <div className="w-1\2 flex flex-col justify-center items-center lg:items-start">
-          <h2 className="hidden sm:block leading-snug	text-2xl sm:text-3xl md:text-4xl dark:text-white text-black motion-safe:animate-hero-text-reveal md:pt-4">
+      <section className="flex lg:flex-row flex-col justify-between w-full h-4/6">
+        <div className="flex flex-col justify-center items-center lg:items-start w-1\2">
+          <h2 className="sm:block hidden md:pt-4 text-2xl text-black sm:text-3xl md:text-4xl dark:text-white leading-snug">
             Welcome to my digital realm!
             <br /> I'm Marlone, a lovely human who just happens to be writing
             code. <br />
           </h2>
 
-          <h2 className="sm:hidden text-center leading-snug	text-2xl sm:text-3xl md:text-4xl dark:text-white text-black motion-safe:animate-hero-text-reveal md:pt-4">
+          <h2 className="sm:hidden md:pt-4 text-2xl text-black text-center sm:text-3xl md:text-4xl dark:text-white leading-snug">
             Welcome to my digital realm! so you wanna create top-tier software?
             Let's dive in and make amazing things happen together!
           </h2>
@@ -23,14 +23,15 @@ export default function LandingPage() {
           <h4 className="pt-10 w-[90%] text-center lg:text-left">
             I've worked with products that have raised more than $100m in
             funding and thus I understand what it takes to build great software.
-            Feel free to engage with me by either having a call or interacting with any of my courses.
+            Feel free to engage with me by either having a call or interacting
+            with any of my courses.
           </h4>
-          <div className="flex py-2 w-full my-10 justify-center items-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start items-center my-10 py-2 w-full">
             <Booking />
             <Course />
           </div>
-          <div className="flex w-full justify-center lg:justify-start py-12 lg:py-36">
-            <Link href="/projects" className="flex  hover:cursor-pointer">
+          <div className="flex justify-center lg:justify-start py-12 lg:py-36 w-full">
+            <Link href="/projects" className="flex hover:cursor-pointer">
               <p className="pr-6">Check out my work</p>
               <div className="lg:-rotate-90">
                 <svg
@@ -39,7 +40,7 @@ export default function LandingPage() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="animate-bounce w-12 h-12 pl-6 "
+                  className="pl-6 w-12 h-12 animate-bounce"
                 >
                   <path
                     strokeLinecap="round"
