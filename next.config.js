@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-import { withContentlayer } from "next-contentlayer";
+const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
   basePath: "/personal-portfolio",
@@ -18,9 +18,6 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 };
 
-export default withContentlayer({ ...nextConfig });
+module.exports = withContentlayer({ ...nextConfig });
