@@ -49,8 +49,8 @@ const Navigation = () => {
       match && "!border-b-4 !border-b-black"
     );
   return (
-    <div className="flex flex-col items-center justify-between p-4 md:pb-8 lg:p-8 max-w-screen-2xl m-auto">
-      <nav className="flex w-full justify-between items-center lg:p-2 pr-[2.1rem]">
+    <div className="flex flex-col justify-between items-center m-auto p-4 lg:p-8 md:pb-8 max-w-screen-2xl">
+      <nav className="flex justify-between items-center lg:p-2 pr-[2.1rem] w-full">
         <h1
           className={cn(
             "text-primary underlined block whitespace-nowrap text-[1.2rem] md:text-2xl font-medium transition focus:outline-none border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
@@ -60,7 +60,7 @@ const Navigation = () => {
           <Link href="/">Port:3000 </Link>
         </h1>
 
-        <ul className="hidden lg:flex lg:justify-around lg:capitalize lg:font-semibold">
+        <ul className="lg:flex lg:justify-around hidden lg:font-semibold lg:capitalize">
           {navItems.map((item, index) => (
             <li key={index} className={getClassName(item.match)}>
               {item.href === "#" ? (
@@ -75,7 +75,7 @@ const Navigation = () => {
         <div className="">
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <button className="hidden lg:block lg:w-[10rem] lg:p-[10px] lg:border-2 dark:lg:border-white dark:lg:bg-white  lg:border-black lg:bg-black dark:lg:text-black lg:text-white  hover:bg-accentDark hover:text-black">
+              <button className="lg:block lg:border-2 dark:lg:border-white hidden dark:lg:bg-white lg:bg-black hover:bg-accentDark lg:p-[10px] lg:border-black lg:w-[10rem] dark:lg:text-black lg:text-white hover:text-black">
                 Hire me!
               </button>
             </AlertDialogTrigger>
@@ -88,7 +88,7 @@ const Navigation = () => {
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel className="  text-black  hover:bg-accentDark hover:text-black">
+                <AlertDialogCancel className="hover:bg-accentDark text-black hover:text-black">
                   Cancel
                 </AlertDialogCancel>
                 <AlertDialogAction>
@@ -108,9 +108,7 @@ const Navigation = () => {
         </Button>
         {isOpen && (
           <div
-            className="duration-500 absolute min-h-full  
-          left-0 top-0 w-full  
-          flex flex-row-reverse px-5 bg-white z-[10000000]"
+            className="top-0 left-0 z-[10000000] absolute flex flex-row-reverse bg-white px-5 w-full min-h-full duration-500"
           >
             <Button
               variant="ghost"
@@ -119,7 +117,7 @@ const Navigation = () => {
             >
               <IconX />
             </Button>
-            <ul className="flex flex-col  w-full h-[50vh] justify-evenly capitalize font-semibold ">
+            <ul className="flex flex-col justify-evenly w-full h-[50vh] font-semibold capitalize">
               <li
                 className={cn(
                   "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
@@ -142,7 +140,7 @@ const Navigation = () => {
               >
                 courses
               </li>
-              <li className="border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer">
+              <li className="border-b-4 hover:border-b-4 hover:border-b-black border-opacity-0 hover:cursor-pointer">
                 discord
               </li>
               <li
@@ -192,7 +190,7 @@ const Navigation = () => {
                 <div className="">
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
-                      <button className="block w-[10rem] p-[10px] border-2 dark:border-white dark:bg-white  border-black bg-black dark:text-black text-white  hover:bg-accentDark hover:text-black">
+                      <button className="block border-2 dark:border-white bg-black hover:bg-accentDark dark:bg-white p-[10px] border-black w-[10rem] text-white hover:text-black dark:text-black">
                         Hire me!
                       </button>
                     </AlertDialogTrigger>
@@ -207,7 +205,7 @@ const Navigation = () => {
                         </AlertDialogDescription>
                       </AlertDialogHeader>
                       <AlertDialogFooter>
-                        <AlertDialogCancel className="  text-black  hover:bg-accentDark hover:text-black">
+                        <AlertDialogCancel className="hover:bg-accentDark text-black hover:text-black">
                           Cancel
                         </AlertDialogCancel>
                         <AlertDialogAction>
