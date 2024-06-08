@@ -6,40 +6,40 @@ export const metadata = {
   description: `Check out my projects`,
 };
 
-export default function componentName() {
+export default function Project() {
   return (
-    <main className="p-16 flex w-full flex-col items-center justify-center dark:text-light">
+    <main className="flex flex-col justify-center items-center p-16 w-full dark:text-light">
       <article className="mt-4 font-os">
-        <div className="relative mx-32 flex flex-col justify-between lg:mx-14 md:mx-12 xsm:mx-4">
-          <div className="flex h-auto w-full flex-col items-center justify-center">
-            <h1 className="my-8 text-center text-6xl font-extrabold uppercase leading-tight text-dark drop-shadow-textredmd  dark:text-light dark:drop-shadow-textredmddark sxl:text-7xl sxl:leading-snug md:my-8 md:text-5xl md:leading-snug  sm:text-4xl sm:leading-snug  sm:drop-shadow-textredmd dark:sm:drop-shadow-textredmddark  xsm:text-2xl xsm:leading-tight  xsm:drop-shadow-textredsm dark:xsm:drop-shadow-textredsmdark xs:text-xl">
+        <div className="relative flex flex-col justify-between mx-32 xsm:mx-4 md:mx-12 lg:mx-14">
+          <div className="flex flex-col justify-center items-center w-full h-auto">
+            <h1 className="drop-shadow-textredmd sm:drop-shadow-textredmd dark:sm:drop-shadow-textredmddark xsm:drop-shadow-textredsm dark:xsm:drop-shadow-textredsmdark dark:drop-shadow-textredmddark my-8 md:my-8 font-extrabold text-6xl text-center text-dark sm:text-4xl xsm:text-2xl md:text-5xl sxl:text-7xl xs:text-xl dark:text-light uppercase leading-tight sm:leading-snug xsm:leading-tight md:leading-snug sxl:leading-snug">
               React Website Tutorial: Build Feature Rich Crypto Screener App
               with Tailwind CSS
             </h1>
-            <div className="text-md mb-8 font-medium capitalize text-placeholder sm:text-sm">
+            <div className="mb-8 font-medium text-md text-placeholder sm:text-sm capitalize">
               <a
-                className="mr-3 rounded font-semibold capitalize text-reddark underline underline-offset-2 hover:border-reddark  hover:bg-transparent  dark:text-red"
+                className="hover:bg-transparent mr-3 hover:border-reddark rounded font-semibold text-reddark dark:text-red underline underline-offset-2 capitalize"
                 href="/videos/category/web-app"
               >
                 #web-app
               </a>
               <a
-                className="mr-3 rounded font-semibold capitalize text-reddark underline underline-offset-2 hover:border-reddark  hover:bg-transparent  dark:text-red"
+                className="hover:bg-transparent mr-3 hover:border-reddark rounded font-semibold text-reddark dark:text-red underline underline-offset-2 capitalize"
                 href="/videos/category/react-js"
               >
                 #react-js
               </a>
               <a
-                className="mr-3 rounded font-semibold capitalize text-reddark underline underline-offset-2 hover:border-reddark  hover:bg-transparent  dark:text-red"
+                className="hover:bg-transparent mr-3 hover:border-reddark rounded font-semibold text-reddark dark:text-red underline underline-offset-2 capitalize"
                 href="/videos/category/tailwind-css"
               >
                 #tailwind-css
               </a>
             </div>
-            <div className="relative w-full rounded-lg">
+            <div className="relative rounded-lg w-full">
               <button
                 type="button"
-                className="group relative aspect-[16/9] w-full"
+                className="relative w-full aspect-[16/9] group"
                 name="Play video React Website Tutorial: Build Feature Rich Crypto Screener App with Tailwind CSS"
               >
                 <Image
@@ -47,12 +47,12 @@ export default function componentName() {
                   alt="demo"
                   width="1280"
                   height="720"
-                  className="m-0 h-auto w-full rounded-lg xsm:my-0"
+                  className="m-0 xsm:my-0 rounded-lg w-full h-auto"
                   style={{ color: "transparent" }}
                   sizes="(max-width: 640px) 100vw, (max-width: 1200px) 90vw, 50vw"
                 />
-                <span className="absolute top-[50%] left-[50%] z-10 grid h-auto w-full translate-x-[-50%] translate-y-[-50%] place-items-center text-xl text-reddark">
-                  <span className="flex h-24 w-24 items-center justify-center rounded-full bg-reddark text-light lg:h-16 lg:w-16 sm:h-12 sm:w-12">
+                <span className="top-[50%] left-[50%] z-10 absolute place-items-center grid w-full h-auto text-reddark text-xl translate-x-[-50%] translate-y-[-50%]">
+                  <span className="flex justify-center items-center bg-reddark rounded-full w-24 sm:w-12 lg:w-16 h-24 sm:h-12 lg:h-16 text-light">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true"
@@ -61,7 +61,7 @@ export default function componentName() {
                       height="1em"
                       preserveAspectRatio="xMidYMid meet"
                       viewBox="0 0 32 32"
-                      className="h-2/5 w-full transform transition group-hover:scale-105"
+                      className="group-hover:scale-105 w-full h-2/5 transform transition"
                     >
                       <path
                         fill="currentColor"
@@ -74,7 +74,7 @@ export default function componentName() {
             </div>
           </div>
           <div className="py-8">
-            <p className="text-lg mb-6 leading-relaxed">
+            <p className="mb-6 text-lg leading-relaxed">
               In this tutorial, we will build a cryptocurrency screener app
               using React.js and Tailwind CSS. We'll cover everything from
               setting up the project to fetching real-time cryptocurrency data
@@ -83,10 +83,10 @@ export default function componentName() {
               cryptocurrencies and view their details, such as price, market
               cap, and trading volume.
             </p>
-            <h2 className="text-2xl mb-4 font-semibold">
+            <h2 className="mb-4 font-semibold text-2xl">
               What You Will Learn:
             </h2>
-            <ul className="list-disc list-inside mb-8">
+            <ul className="mb-8 list-disc list-inside">
               <li>Setting up a React.js project with Tailwind CSS</li>
               <li>Fetching real-time cryptocurrency data from an API</li>
               <li>Building a dynamic search functionality</li>
