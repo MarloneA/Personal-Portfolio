@@ -6,7 +6,7 @@ import { siteMetadata } from "@/utils/siteMetaData";
 import { slug } from "github-slugger";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { allBlogs } from "../../../../.contentlayer/generated";
+import { allBlogs } from "../../../../Blog/_index.mjs";
 
 export async function generateStaticParams() {
   return allBlogs.map((blog) => ({ slug: blog._raw.flattenedPath }));

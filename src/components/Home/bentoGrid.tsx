@@ -5,7 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { IconClipboardCopy } from "@tabler/icons-react";
 import Link from "next/link";
-import { allBlogs } from "../../../.contentlayer/generated";
+import { allBlogs } from "../../../Blog/_index.mjs";
 
 export const BentoGrid = ({
   className,

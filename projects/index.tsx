@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: "1",
-    projectUrl: "https://google.com",
+    projectUrl: "https://saas-starter-kit-swart.vercel.app",
     imgUrl: "/blogs/c-d-x-PDX_a_82obo-unsplash.jpg",
     title: "Starter Kit",
     description: `A collection of App Builders to bootstrap your projects. The boilerplate has all you need to build your SaaS, AI tool, or any other web app and start getting feedback on your product as soon as possible.`,
@@ -45,8 +45,7 @@ export const projects = [
   // },
   {
     id: "4",
-    projectUrl:
-      "https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css",
+    projectUrl: "https://fullstack-nextjs-weld.vercel.app",
     imgUrl: "/blogs/paul-esch-laurent-oZMUrWFHOB4-unsplash.jpg",
     title: "Rall-y",
     description:

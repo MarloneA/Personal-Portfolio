@@ -1,4 +1,4 @@
-import { allBlogs } from "../../../.contentlayer/generated";
+import { allBlogs } from "../../../Blog/_index.mjs";
 import HomeCoverSection from "@/components/Blog/HomeCoverSection";
 import FeaturedPosts from "@/components/Blog/FeaturedPosts";
 import RecentPosts from "@/components/Blog/RecentPosts";
