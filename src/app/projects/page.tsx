@@ -2,6 +2,18 @@ import Image from "next/image";
 import React from "react";
 import { projects } from "../../../projects";
 
+import Autoplay from "embla-carousel-autoplay";
+
+import { Card, CardContent } from "@/components/__ui__/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/__ui__/carousel";
+import { ProjectShowcase } from "@/components/Project/projectshowcase";
+
 export const metadata = {
   title: "Projects",
   description: `Check out my projects`,
@@ -53,6 +65,7 @@ export default function MyProjects() {
               title,
               description,
               featured,
+              slides,
             } = project;
 
             return (
@@ -63,14 +76,7 @@ export default function MyProjects() {
                     className="rounded-lg w-11/12 lg:w-full cursor-pointer overflow-hidden"
                     href={projectUrl}
                   >
-                    <Image
-                      src={imgUrl}
-                      alt="demo"
-                      width="1280"
-                      height="720"
-                      className="w-full lg:w-11/12 h-auto"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    <ProjectShowcase slides={project.slides} />
                   </a>
                   <div className="flex flex-col justify-between items-start lg:pt-6 pl-6 lg:pl-0 lg:w-1/3">
                     {featured && (
@@ -81,7 +87,7 @@ export default function MyProjects() {
                     <a
                       target="_blank"
                       className="underline-offset-2 hover:underline"
-                      href="https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css"
+                      href={projectUrl}
                     >
                       <h2 className="my-2 w-full font-bold text-4xl text-left lg:text-3xl xs:text-2xl">
                         {title}

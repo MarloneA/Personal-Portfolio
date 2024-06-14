@@ -8,6 +8,13 @@ export const projects = [
     githubUrl: "https://github.com/MarloneA/SAAS-Starter-Kit",
     featured: true,
     layout: "full",
+    slides: [
+      "/images/saaskit/slide1.png",
+      "/images/saaskit/slide2.png",
+      "/images/saaskit/slide3.png",
+      "/images/saaskit/slide4.png",
+      "/images/saaskit/slide5.png",
+    ],
   },
   // {
   //   id: "2",
@@ -20,17 +27,18 @@ export const projects = [
   //   featured: true,
   //   layout: "semi",
   // },
-  {
-    id: "2",
-    projectUrl: "https://google.com",
-    imgUrl: "/blogs/lauren-mancke-aOC7TSLb1o8-unsplash.jpg",
-    title: "Car-fiti",
-    description:
-      "A fraud detection app to verify vehicle usage history by vin number searches. The app scraped the web for any information about the car and consolidates it under one view",
-    githubUrl: "https://github.com/MarloneA/CarAutoCheckApp",
-    featured: true,
-    layout: "semi",
-  },
+  // {
+  //   id: "2",
+  //   projectUrl: "https://google.com",
+  //   imgUrl: "/blogs/lauren-mancke-aOC7TSLb1o8-unsplash.jpg",
+  //   title: "Car-fiti",
+  //   description:
+  //     "A fraud detection app to verify vehicle usage history by vin number searches. The app scraped the web for any information about the car and consolidates it under one view",
+  //   githubUrl: "https://github.com/MarloneA/CarAutoCheckApp",
+  //   featured: true,
+  //   layout: "semi",
+  //   slides: ["/blogs/lauren-mancke-aOC7TSLb1o8-unsplash.jpg"],
+  // },
   // {
   //   id: "3",
   //   projectUrl:
@@ -53,5 +61,6 @@ export const projects = [
     githubUrl: "https://github.com/MarloneA/Fullstack-Nextjs",
     featured: true,
     layout: "full",
+    slides: ["/images/rally/slide1.png", "/images/rally/slide2.png"],
   },
 ];
