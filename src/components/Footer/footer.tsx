@@ -11,7 +11,7 @@ import {
   IconBrandX,
   IconBrandYoutube,
 } from "@tabler/icons-react";
-import { useToast } from "../__ui__/use-toast";
+import { useToast } from "../_ui/use-toast";
 
 export default function Footer() {
   const [email, setEmail] = useState("");

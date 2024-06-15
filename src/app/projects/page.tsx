@@ -4,14 +4,14 @@ import { projects } from "../../../projects";
 
 import Autoplay from "embla-carousel-autoplay";
 
-import { Card, CardContent } from "@/components/__ui__/card";
+import { Card, CardContent } from "@/components/_ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/__ui__/carousel";
+} from "@/components/_ui/carousel";
 import { ProjectShowcase } from "@/components/Project/projectshowcase";
 
 export const metadata = {

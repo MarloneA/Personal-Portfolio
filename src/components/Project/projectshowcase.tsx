@@ -11,7 +11,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/__ui__/carousel";
+} from "@/components/_ui/carousel";
 
 export function ProjectShowcase({ slides }: { slides: String[] }) {
   const plugin = React.useRef(

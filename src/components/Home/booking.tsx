@@ -1,7 +1,7 @@
 "use client";
 
 import { CopyIcon } from "@radix-ui/react-icons";
-import { Button } from "@/components/__ui__/button";
+import { Button } from "@/components/_ui/button";
 import {
   Dialog,
   DialogClose,
@@ -11,9 +11,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/__ui__/dialog";
-import { Input } from "@/components/__ui__/input";
-import { Label } from "@/components/__ui__/label";
+} from "@/components/_ui/dialog";
+import { Input } from "@/components/_ui/input";
+import { Label } from "@/components/_ui/label";
 import { InlineWidget } from "react-calendly";
 
 export function Booking() {

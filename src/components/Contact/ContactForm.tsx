@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useToast } from "../__ui__/use-toast";
+import { useToast } from "../_ui/use-toast";
 
 export default function ContactForm() {
   const {

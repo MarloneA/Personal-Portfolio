@@ -13,8 +13,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/__ui__/alert-dialog";
-import { Button } from "../__ui__/button";
+} from "@/components/_ui/alert-dialog";
+import { Button } from "../_ui/button";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import { IconX } from "@tabler/icons-react";
