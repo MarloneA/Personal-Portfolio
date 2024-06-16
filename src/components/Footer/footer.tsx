@@ -49,7 +49,7 @@ export default function Footer() {
     return (
       <footer className="flex flex-col justify-between items-center m-auto p-4 lg:p-12 max-w-screen-2xl">
         <div className="border-2 border-black w-full"></div>
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full flex-col md:flex-row items-center md:items-start">
           <h2 className="mt-8 font-semibold dark:font-normal text-dark text-lg md:text-2xl dark:text-light self-start">
             Have a project in mind? Reach out to me 📞 from{" "}
             <Link href="/contact" className="!underline underline-offset-2">
@@ -153,8 +153,6 @@ export default function Footer() {
                   Writing
                 </Link>
               </li>
-              {/* <li>Courses</li>
-            <li>Discord</li>*/}
               <li>
                 <Link
                   className="hover:border-b-4 hover:border-b-black"
@@ -163,14 +161,6 @@ export default function Footer() {
                   Projects
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  className="hover:border-b-4 hover:border-b-black"
-                  href="/videos"
-                >
-                  Videos
-                </Link>
-              </li> */}
               <li>
                 <Link
                   className="hover:border-b-4 hover:border-b-black"
@@ -193,21 +183,15 @@ export default function Footer() {
             <p className="font-bold">Stay up to date</p>
             <p>
               Subscribe to the newsletter to stay up to date with articles,
-              courses and much more!
+              videos and much more!
             </p>
             <form onSubmit={handleSubmit}>
-              {/* <div className="flex flex-col">
-              <label className="my-4" htmlFor="">
-                First name
-              </label>
-              <input className="border-2 p-4 border-black" type="text" />
-            </div> */}
               <div className="flex flex-col">
                 <label className="my-4" htmlFor="">
                   Email
                 </label>
                 <input
-                  className="border-2 p-4 border-black"
+                  className="border-2 p-4 border-black !shadow-[5px_5px_1px_1px_#000000]"
                   type="text"
                   id="email"
                   value={email}
@@ -215,7 +199,7 @@ export default function Footer() {
                 />
               </div>
               <button
-                className="border-2 bg-black my-4 px-6 p-6 border-black rounded w-full text-white"
+                className="border-2 bg-black my-4 px-6 p-6 border-black rounded w-full text-white hover:bg-accentDark hover:text-black !shadow-[5px_5px_1px_1px_#000000]"
                 type="submit"
               >
                 subscribe to newsletter
@@ -305,8 +289,6 @@ export default function Footer() {
                 Writing
               </Link>
             </li>
-            {/* <li>Courses</li>
-            <li>Discord</li>*/}
             <li>
               <Link
                 className="hover:border-b-4 hover:border-b-black"
@@ -315,14 +297,6 @@ export default function Footer() {
                 Projects
               </Link>
             </li>
-            {/* <li>
-                <Link
-                  className="hover:border-b-4 hover:border-b-black"
-                  href="/videos"
-                >
-                  Videos
-                </Link>
-              </li> */}
             <li>
               <Link
                 className="hover:border-b-4 hover:border-b-black"
@@ -345,21 +319,15 @@ export default function Footer() {
           <p className="font-bold">Stay up to date</p>
           <p>
             Subscribe to the newsletter to stay up to date with articles,
-            courses and much more!
+            videos and much more!
           </p>
           <form onSubmit={handleSubmit}>
-            {/* <div className="flex flex-col">
-              <label className="my-4" htmlFor="">
-                First name
-              </label>
-              <input className="border-2 p-4 border-black" type="text" />
-            </div> */}
             <div className="flex flex-col">
               <label className="my-4" htmlFor="">
                 Email
               </label>
               <input
-                className="border-2 p-4 border-black"
+                className="border-2 p-4 border-black !shadow-[5px_5px_1px_1px_#000000]"
                 type="text"
                 id="email"
                 value={email}
@@ -367,7 +335,7 @@ export default function Footer() {
               />
             </div>
             <button
-              className="border-2 bg-black my-4 px-6 p-6 border-black rounded w-full text-white"
+              className="border-2 bg-black my-4 px-6 p-6 border-black rounded w-full text-white hover:bg-accentDark hover:text-black !shadow-[5px_5px_1px_1px_#000000]"
               type="submit"
             >
               subscribe to newsletter
