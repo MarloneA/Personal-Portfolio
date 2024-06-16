@@ -2,7 +2,6 @@ export const projects = [
   {
     id: "1",
     projectUrl: "https://saas-starter-kit-swart.vercel.app",
-    imgUrl: "/blogs/c-d-x-PDX_a_82obo-unsplash.jpg",
     title: "Starter Kit",
     description: `A collection of App Builders to bootstrap your projects. The boilerplate has all you need to build your SaaS, AI tool, or any other web app and start getting feedback on your product as soon as possible.`,
     githubUrl: "https://github.com/MarloneA/SAAS-Starter-Kit",
@@ -39,22 +38,10 @@ export const projects = [
   //   layout: "semi",
   //   slides: ["/blogs/lauren-mancke-aOC7TSLb1o8-unsplash.jpg"],
   // },
-  // {
-  //   id: "3",
-  //   projectUrl:
-  //     "https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css",
-  //   imgUrl: "/blogs/marvin-meyer-SYTO3xs06fU-unsplash.jpg",
-  //   title: "Veil App",
-  //   description:
-  //     "An app that allows you to get instant feedback on the quality of your product and also insights on how to improve it from the people who actually use your product",
-  //   githubUrl: "https://github.com/codebucks27/CryptoBucks-Final-Code",
-  //   featured: true,
-  //   layout: "semi",
-  // },
+
   {
     id: "4",
     projectUrl: "https://fullstack-nextjs-weld.vercel.app",
-    imgUrl: "/blogs/paul-esch-laurent-oZMUrWFHOB4-unsplash.jpg",
     title: "Rall-y",
     description:
       "A zero bloat project management suit of tools that will allow you to easily work through your timelines without having to deal with clutter",
@@ -62,5 +49,16 @@ export const projects = [
     featured: true,
     layout: "full",
     slides: ["/images/rally/slide1.png", "/images/rally/slide2.png"],
+  },
+  {
+    id: "3",
+    projectUrl: "https://snag-7pq88t048-marloneas-projects.vercel.app/",
+    title: "Snag AI",
+    description:
+      "Snag allows you to use Ai to generate video summarise and search and interact with comment section data. Snag Ai is powered by OpenAI",
+    githubUrl: "https://github.com/MarloneA/snag-ai",
+    featured: true,
+    layout: "semi",
+    slides: ["/images/snag/slide1.png", "/images/snag/slide2.png"],
   },
 ];

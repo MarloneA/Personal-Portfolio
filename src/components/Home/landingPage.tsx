@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function LandingPage() {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full my-8">
       <section className="flex lg:flex-row flex-col justify-between w-full h-4/6">
         <div className="flex flex-col justify-center items-center lg:items-start w-1\2">
           <h2 className="sm:block hidden md:pt-4 text-2xl text-black sm:text-3xl md:text-4xl dark:text-white leading-snug">

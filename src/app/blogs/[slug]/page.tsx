@@ -127,7 +127,7 @@ export default function BlogPage({ params }) {
             sizes="100vw"
           />
         </div>
-        <BlogDetails blog={blog} slug={params.slug} />
+        {/* <BlogDetails blog={blog} slug={params.slug} /> */}
 
         <div className="gap-y-8 lg:gap-8 sxl:gap-16 grid grid-cols-12 mt-8 px-5 md:px-10">
           <div className="col-span-12 lg:col-span-4">
