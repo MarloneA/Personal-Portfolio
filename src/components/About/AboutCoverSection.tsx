@@ -42,7 +42,7 @@ const AboutCoverSection = () => {
             href="/assets/Marlone_Akidiva_Software_Engineer-Resume.pdf"
             download
           >
-            <button className="border-2 dark:border-white bg-black hover:bg-accentDark dark:bg-white m-6 ml-0 md:px-6 p-3 md:p-4 border-black w-60 min-w-fit text-sm text-white hover:text-black dark:text-black">
+            <button className="border-2 dark:border-white bg-black hover:bg-accentDark dark:bg-white m-6 ml-0 md:px-6 p-3 md:p-4 border-black w-60 min-w-fit text-sm text-white hover:text-black dark:text-black !shadow-[5px_5px_1px_1px_#000000]">
               Download CV
             </button>
           </a>
