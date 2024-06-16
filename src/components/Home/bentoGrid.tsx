@@ -39,15 +39,15 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
-  link?: string;
+  link: string;
 }) => {
   return (
     <Link
       href={link}
       className={cn(
         "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 hover:cursor-pointer",
-        className
-        // " border-black !shadow-[5px_5px_1px_1px_#000000]"
+        className,
+        " border-black !shadow-[5px_5px_1px_1px_#000000]"
       )}
     >
       {header}
@@ -65,8 +65,6 @@ export const BentoGridItem = ({
 };
 
 export function BentoGridSection() {
-  // const shuffledBlogs = allBlogs.sort(() => 0.5 - Math.random());
-
   const bentoContent = allBlogs.slice(0, 4).map((blog, index) => {
     let className;
     if (index === 0 || index === 3) {
@@ -107,7 +105,7 @@ const Skeleton = ({ src }: { src: string }) => (
       alt="demo"
       width="1280"
       height="720"
-      className="w-full h-auto object-cover"
+      className="w-full h-auto object-cover rounded-md"
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
   </div>

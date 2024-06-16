@@ -12,7 +12,7 @@ export default function Contact() {
     <section className="flex md:flex-row flex-col justify-center items-center border-b-2 border-light dark:border-light border-solid w-full h-auto md:h-[75vh] text-dark dark:text-light">
       <div className="flex justify-center items-center m-auto md:border-r-2 dark:border-light border-solid w-full sm:w-4/5 md:w-2/5 h-full">
         {/* <LottieAnimation /> */}
-        <div className="rounded-3xl w-[66%] h-full">
+        <div className="rounded-3xl w-full p-4 lg:w-[66%] h-full">
           <iframe
             className="rounded-3xl w-full h-full"
             src="https://youtube.com/embed/GQkkHtBD1BM?si=oMjHK_LR8QJ0bDpV?controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3"
