@@ -8,6 +8,7 @@ export const projects = [
     featured: true,
     layout: "full",
     slides: [
+      "/images/saaskit/slide0.png",
       "/images/saaskit/slide1.png",
       "/images/saaskit/slide2.png",
       "/images/saaskit/slide3.png",
