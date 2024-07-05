@@ -62,4 +62,15 @@ export const projects = [
     layout: "full",
     slides: ["/images/rally/slide1.png", "/images/rally/slide2.png"],
   },
+  {
+    id: "4",
+    projectUrl: "https://groove-phi.vercel.app/",
+    title: "Groove",
+    description:
+      "An app build to provide accurate music playlists and recommendations based on your taste",
+    githubUrl: "https://github.com/MarloneA/groove",
+    featured: true,
+    layout: "full",
+    slides: ["/images/groove/slide1.png", "/images/groove/slide2.png"],
+  },
 ];
