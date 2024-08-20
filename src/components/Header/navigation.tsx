@@ -39,7 +39,7 @@ const Navigation = () => {
     //   match: pathname.includes("videos"),
     // },
     // { href: "/events", label: "ccommunity-events", match: pathname.includes("events") },
-    { href: "/about", label: "about", match: pathname === "/about" },
+    // { href: "/about", label: "about", match: pathname === "/about" },
     { href: "/contact", label: "contact", match: pathname === "/contact" },
   ];
 

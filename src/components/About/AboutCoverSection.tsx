@@ -22,12 +22,11 @@ const AboutCoverSection = () => {
       </div>
 
       <div className="flex flex-col justify-center items-start px-5 lg:px-16 xs:p-10 pb-10 w-full md:w-1/2 text-left">
-        <h2 className="font-bold text-4xl text-center lg:text-left xs:text-5xl sxl:text-6xl capitalize">
-          If you want to win the lottery you have to make the money to buy a
-          ticket.
-        </h2>
+        <h3 className="font-bold text-2xl text-center lg:text-left xs:text-5xl sxl:text-6xl capitalize">
+          Experience is the name everyone gives to their mistakes
+        </h3>
         <p className="flex justify-end w-full font-bold text-xs italic">
-          ~ NightCrawler
+          ~ Oscar Wilde
         </p>
         <p className="mt-4 font-medium text-base capitalize">
           As a passionate software engineer, I combine cutting-edge technology

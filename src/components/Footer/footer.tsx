@@ -7,8 +7,6 @@ import {
   IconBrandGithub,
   IconBrandGmail,
   IconBrandLinkedin,
-  IconBrandTwitter,
-  IconBrandX,
   IconBrandYoutube,
 } from "@tabler/icons-react";
 import { useToast } from "../_ui/use-toast";
@@ -132,14 +130,14 @@ export default function Footer() {
               </li>
               <li>
                 <a href="https://calendly.com/marloneakidiva/30min">
-                  Schedule a zoom call
+                  Schedule a meeting
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="https://calendly.com/marloneakidiva/30min">
                   Book a slot on calendly
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="my-4 w-full lg:w-1/6">
@@ -161,14 +159,14 @@ export default function Footer() {
                   Projects
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   className="hover:border-b-4 hover:border-b-black"
                   href="/about"
                 >
                   About
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   className="hover:border-b-4 hover:border-b-black"
@@ -262,25 +260,33 @@ export default function Footer() {
         </div>
         <div className="w-full lg:w-1/6">
           <p className="font-bold">Contact</p>
-          <ul className="flex flex-col justify-around h-24">
+          <ul className="flex flex-col justify-around space-y-2">
             <li>
               <a href="mailto:marlone.akidiva@gmail.com">Email Marlone</a>
             </li>
             <li>
               <a href="https://calendly.com/marloneakidiva/30min">
-                Schedule a zoom call
+                Schedule a meeting
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="https://calendly.com/marloneakidiva/30min">
                 Book a slot on calendly
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="my-4 w-full lg:w-1/6">
           <p className="pb-2 font-bold">Sitemap</p>
           <ul className="flex lg:flex-col justify-between lg:justify-around lg:h-48">
+            <li>
+              <Link
+                className="hover:border-b-4 hover:border-b-black"
+                href="/"
+              >
+                Home
+              </Link>
+            </li>
             <li>
               <Link
                 className="hover:border-b-4 hover:border-b-black"
@@ -297,14 +303,14 @@ export default function Footer() {
                 Projects
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 className="hover:border-b-4 hover:border-b-black"
                 href="/about"
               >
                 About
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 className="hover:border-b-4 hover:border-b-black"
@@ -318,8 +324,8 @@ export default function Footer() {
         <div className="w-full lg:w-2/6">
           <p className="font-bold">Stay up to date</p>
           <p>
-            Subscribe to the newsletter to stay up to date with articles,
-            videos and much more!
+            Subscribe to the newsletter to stay up to date with articles, videos
+            and much more!
           </p>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col">

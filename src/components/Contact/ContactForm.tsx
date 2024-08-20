@@ -87,7 +87,7 @@ export default function ContactForm() {
         type="email"
         placeholder="your@email"
         {...register("email", {})}
-        className="outline-none border-0 p-0 mx-2 my-4 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
+        className="w-1/2 outline-none border-0 p-0 mx-2 my-4 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
       />
       <br />
@@ -99,7 +99,7 @@ export default function ContactForm() {
         onChange={handleFileChange}
         className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 mt-4"
       />
-      <ul className="mt-4">
+      <ul className="mt-4 h-16 overflow-scroll">
         {selectedFiles.map((file, index) => (
           <li key={index} className="text-sm text-gray-700">
             {file.name}
