@@ -15,25 +15,43 @@ export default function ContactForm() {
   const { toast } = useToast();
   const [selectedFiles, setSelectedFiles] = useState([]);
 
-  const handleFileChange = (e) => {
-    setSelectedFiles(Array.from(e.target.files));
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+    const files = e.target.files;
+
+    if (!files) return
+
+    Promise.all(Array.from(files).map(async (file: any) => { // read from files
+
+      const arrayBuffer = await file.arrayBuffer();
+
+      return {
+        filename: file.name,
+        content: Buffer.from(arrayBuffer).toString('base64'), // convert to binary for transport
+        contentType: file.type
+      }
+    })).then(processedFiles => setSelectedFiles(processedFiles))
+        .catch(error => console.log(error));
   };
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: FormData) => {
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data, 
+          files: selectedFiles,
+        }),
       });
 
       const result = await res.json();
 
       if (result.success) {
         toast({
-          title: "Success",
+          title: "message sent",
           description:
             "Thanks for reaching out, i'll get back to you as soon as possible",
         });
@@ -69,24 +87,23 @@ export default function ContactForm() {
         className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
       />
-      and I'd like to discuss a potential project with you.
+      and I’m reaching out to explore the possibility of working together on an exciting project
       <br />
       <br />
-      Here are some details about my project: <br />
+      Here are a few details about the project: <br />
       <textarea
-        {...register("project details", {})}
+        {...register("projectDetails", {})}
         placeholder="My project is about..."
         rows={8}
         className="w-full my-4 outline-none border-0 p-0 mx-0 focus:ring-0  placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
       />
-      If this sounds like something you'd be interested in feel free to reach
-      out to me at
+      If this aligns with your expertise and interests, I’d love to discuss it further. Feel free to reach out to me at
       <br />
       <input
         type="email"
         placeholder="your@email"
-        {...register("email", {})}
+        {...register("email", {required: true})}
         className="w-1/2 outline-none border-0 p-0 mx-2 my-4 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
       />
@@ -102,13 +119,13 @@ export default function ContactForm() {
       <ul className="mt-4 h-16 overflow-scroll">
         {selectedFiles.map((file, index) => (
           <li key={index} className="text-sm text-gray-700">
-            {file.name}
+            {file.filename}
           </li>
         ))}
       </ul>
       <button
         type="submit"
-        className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark dark:border-light rounded cursor-pointer !shadow-[5px_5px_1px_1px_#000000]"
+        className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 sm:px-8 border-2 border-solid border-dark dark:border-light rounded cursor-pointer !shadow-[5px_5px_1px_1px_#000000] hover:bg-accentDark"
       >
         Send request
       </button>

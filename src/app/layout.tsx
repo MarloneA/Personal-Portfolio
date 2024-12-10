@@ -64,7 +64,7 @@ export default function RootLayout({
         className={cx(
           inter.variable,
           manrope.variable,
-          "font-mr bg-light dark:bg-dark"
+          "font-mr bg-light dark:bg-dark m-auto max-w-screen-2xl"
         )}
       >
         <Navigation />

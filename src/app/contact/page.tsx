@@ -10,9 +10,12 @@ export const metadata = {
 
 export default function Contact() {
   return (
-    <section className="flex md:flex-row flex-col justify-center items-center border-b-2 border-light dark:border-light border-solid w-full h-auto md:h-[75vh] text-dark dark:text-light">
-      <div className="flex justify-center items-center m-auto md:border-r-2 dark:border-light border-solid w-full sm:w-4/5 md:w-2/5 h-full">
-        {/* <LottieAnimation /> */}
+    <section className="flex md:flex-row flex-col justify-center items-center border-b-2 border-light dark:border-light border-solid w-full h-auto text-dark dark:text-light">
+      <div className="flex justify-center items-center m-auto w-full sm:w-4/5 md:w-2/5 h-full p-12">
+        <h2 className="font-bold text-2xl sm:text-4xl xs:text-3xl capitalize">
+            Hi there, Let's Connect!
+        </h2>
+        <LottieAnimation />
         {/* <div className="rounded-3xl w-full p-4 lg:w-[66%] h-full"> */}
         {/* <iframe
             className="rounded-3xl w-full h-full"
@@ -22,19 +25,19 @@ export default function Contact() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe> */}
-        <Image
+        {/* <Image
           src="/images/headshot.png"
           alt="profile_pic"
           className="rounded-3xl w-[75%] p-4 h-full object-cover"
           width={1920}
           height={1080}
-        />
+        /> */}
         {/* </div> */}
       </div>
-      <div className="flex flex-col justify-center items-start px-5 md:px-16 xs:px-10 pb-8 w-full md:w-3/5">
-        <h2 className="font-bold text-2xl sm:text-4xl xs:text-3xl capitalize">
+      <div className="flex flex-col justify-center items-start px-5 md:px-16 xs:px-10 pb-8 w-full md:w-3/5 md:border-l-2 dark:border-light border-solid">
+        {/* <h2 className="font-bold text-2xl sm:text-4xl xs:text-3xl capitalize">
           Let's Connect!
-        </h2>
+        </h2> */}
         <ContactForm />
       </div>
     </section>

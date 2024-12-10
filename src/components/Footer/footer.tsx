@@ -49,11 +49,11 @@ export default function Footer() {
         <div className="border-2 border-black w-full"></div>
         <div className="flex justify-between w-full flex-col md:flex-row items-center md:items-start">
           <h2 className="mt-8 font-semibold dark:font-normal text-dark text-lg md:text-2xl dark:text-light self-start">
-            Have a project in mind? Reach out to me 📞 from{" "}
-            <Link href="/contact" className="!underline underline-offset-2">
-              here
-            </Link>{" "}
-            and let's make it happen.
+            Have a project in mind?
+            
+            Get in touch <Link href="/contact" className="!underline underline-offset-2">
+              here 📞 
+            </Link>{" "}, and let's make it happen.
           </h2>
           <ul className="flex justify-between my-10 w-48">
             <li>

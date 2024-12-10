@@ -21,7 +21,6 @@ import { IconX } from "@tabler/icons-react";
 
 const Navigation = () => {
   const [isOpen, setisOpen] = useState(false);
-
   const pathname = usePathname();
 
   const navItems = [
@@ -54,10 +53,11 @@ const Navigation = () => {
         <h1
           className={cn(
             "text-primary underlined block whitespace-nowrap text-[1.2rem] md:text-2xl font-medium transition focus:outline-none border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
-            pathname === "/" && "!border-b-4 !border-b-black"
+            pathname === "/" && "!border-4 p-2 !border-black hover:bg-accentDark"
           )}
         >
-          <Link href="/">Port:3000 </Link>
+          {/* <Link href="/">Port:3000 </Link> */}
+          <Link href="/">MA</Link>
         </h1>
 
         <ul className="hidden lg:flex lg:justify-around lg:capitalize lg:font-semibold">
@@ -76,10 +76,13 @@ const Navigation = () => {
           <AlertDialog>
             <AlertDialogTrigger asChild>
               <button className="hidden lg:block lg:w-[10rem] lg:p-[10px] lg:border-2 dark:lg:border-white dark:lg:bg-white  lg:border-black lg:bg-black dark:lg:text-black lg:text-white  hover:bg-accentDark hover:text-black border-black !shadow-[5px_5px_1px_1px_#000000]">
+                <a href="/contact">
+                
                 work with me!
+                </a>
               </button>
             </AlertDialogTrigger>
-            <AlertDialogContent>
+            {/* <AlertDialogContent>
               <AlertDialogHeader>
                 <AlertDialogTitle>Let's work together?</AlertDialogTitle>
                 <AlertDialogDescription>
@@ -100,7 +103,7 @@ const Navigation = () => {
                   </Link>
                 </AlertDialogAction>
               </AlertDialogFooter>
-            </AlertDialogContent>
+            </AlertDialogContent> */}
           </AlertDialog>
         </div>
         <Button onClick={() => setisOpen(true)} className="lg:hidden">
