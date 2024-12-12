@@ -13,9 +13,9 @@ export default function Contact() {
     <section className="flex md:flex-row flex-col justify-center items-center border-b-2 border-light dark:border-light border-solid w-full h-auto text-dark dark:text-light">
       <div className="flex justify-center items-center m-auto w-full sm:w-4/5 md:w-2/5 h-full p-12">
         <h2 className="font-bold text-2xl sm:text-4xl xs:text-3xl capitalize">
-            Hi there, Let's Connect!
+          Hi there, Let's Connect!
         </h2>
-        <LottieAnimation />
+        <LottieAnimation src="/lottie/call_anim.json" />
         {/* <div className="rounded-3xl w-full p-4 lg:w-[66%] h-full"> */}
         {/* <iframe
             className="rounded-3xl w-full h-full"

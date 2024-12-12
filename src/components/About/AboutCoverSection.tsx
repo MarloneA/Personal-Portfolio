@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import React from "react";
-import marlone from "../../../public/images/marlone.jpg";
+import marlone from "../../../public/images/headshot.png";
 import "@dotlottie/react-player/dist/index.css";
 import { DotLottiePlayer } from "@dotlottie/react-player";
 
 const AboutCoverSection = () => {
   return (
     <section className="flex md:flex-row flex-col justify-center items-center border-b-2 border-light dark:border-light border-solid w-full md:h-[75vh] text-dark dark:text-light">
-      <div className="flex justify-center border-r-2 border-light dark:border-light border-solid w-full md:w-1/2 h-full">
+      <div className="flex justify-center border-r-2 border-light dark:border-light border-solid w-full md:w-1/2 h-full p-12">
         <Image
           src={marlone}
           alt="marlone"

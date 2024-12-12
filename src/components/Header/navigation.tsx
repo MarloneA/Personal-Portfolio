@@ -3,21 +3,11 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/_ui/alert-dialog";
 import { Button } from "../_ui/button";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import { IconX } from "@tabler/icons-react";
+import { ModeToggle } from "../_ui/theme-toggle";
 
 const Navigation = () => {
   const [isOpen, setisOpen] = useState(false);
@@ -32,20 +22,20 @@ const Navigation = () => {
       label: "projects",
       match: pathname.includes("projects"),
     },
-    // {
-    //   href: "/videos",
-    //   label: "videos",
-    //   match: pathname.includes("videos"),
-    // },
-    // { href: "/events", label: "ccommunity-events", match: pathname.includes("events") },
-    // { href: "/about", label: "about", match: pathname === "/about" },
+    {
+      href: "/videos",
+      label: "videos",
+      match: pathname.includes("videos"),
+    },
+    { href: "/events", label: "community-events", match: pathname.includes("events") },
+    { href: "/about", label: "about", match: pathname === "/about" },
     { href: "/contact", label: "contact", match: pathname === "/contact" },
   ];
 
   const getClassName = (match) =>
     cn(
-      "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer mx-3",
-      match && "!border-b-4 !border-b-black"
+      "border-b-4 hover:border-b-4 hover:border-b-black hover:cursor-pointer mx-3",
+      match && "border-b-4 border-b-black"
     );
   return (
     <div className="flex flex-col items-center justify-between p-4 md:pb-8 lg:p-8 max-w-screen-2xl m-auto">
@@ -70,41 +60,18 @@ const Navigation = () => {
               )}
             </li>
           ))}
+
+          {/* <li><ModeToggle /></li> */}
         </ul>
 
-        <div className="">
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <button className="hidden lg:block lg:w-[10rem] lg:p-[10px] lg:border-2 dark:lg:border-white dark:lg:bg-white  lg:border-black lg:bg-black dark:lg:text-black lg:text-white  hover:bg-accentDark hover:text-black border-black !shadow-[5px_5px_1px_1px_#000000]">
-                <a href="/contact">
-                
-                work with me!
-                </a>
-              </button>
-            </AlertDialogTrigger>
-            {/* <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>Let's work together?</AlertDialogTitle>
-                <AlertDialogDescription>
-                  You will be redirected to my upwork profile where you can hire
-                  me directly on upwork.
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel className="  text-black  hover:bg-accentDark hover:text-black">
-                  Cancel
-                </AlertDialogCancel>
-                <AlertDialogAction>
-                  <Link
-                    target="_blank"
-                    href="https://www.upwork.com/freelancers/~01d7d7e3573487f567?s=1110580755057594368"
-                  >
-                    Continue
-                  </Link>
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent> */}
-          </AlertDialog>
+        <div className="flex justify-items-center items-center">
+          <ModeToggle />
+          <button className="hidden lg:block lg:w-[10rem] lg:p-[10px] lg:border-2 dark:lg:border-white dark:lg:bg-white  lg:border-black lg:bg-black dark:lg:text-black lg:text-white  hover:bg-accentDark hover:text-black border-black !shadow-[5px_5px_1px_1px_#000000]">
+            <a href="/contact">
+            
+            work with me!
+            </a>
+          </button>
         </div>
         <Button onClick={() => setisOpen(true)} className="lg:hidden">
           <HamburgerMenuIcon />
@@ -202,6 +169,7 @@ const Navigation = () => {
                       work with me!
                     </Link>
                   </button>
+                  <ModeToggle/>
                 </div>
               </li>
             </ul>

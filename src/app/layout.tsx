@@ -5,6 +5,7 @@ import { siteMetadata } from "../utils/siteMetaData";
 import Footer from "@/components/Footer/footer";
 import Navigation from "@/components/Header/navigation";
 import { Toaster } from "@/components/_ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -67,10 +68,17 @@ export default function RootLayout({
           "font-mr bg-light dark:bg-dark m-auto max-w-screen-2xl"
         )}
       >
-        <Navigation />
-        {children}
-        <Footer />
-        <Toaster />
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+        >
+          <Navigation />
+          {children}
+          <Footer />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
