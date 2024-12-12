@@ -19,14 +19,15 @@ export const metadata = {
   description: `Check out my projects`,
 };
 
-export default function MyProjects() {
+export default function TechEvents() {
   return (
     <main className="flex flex-col justify-center items-center mb-16 p-4 w-full dark:text-light">
       <div className="inline-block z-0 bg-light dark:bg-dark sm:p-8 md:p-12 lg:p-16 xl:p-24 pt-16 w-full h-full min-h-screen">
         {/* title */}
         <div className="flex flex-col justify-center items-center mx-auto sm:py-0 lg:p-16 w-full text-center overflow-hidden">
           <blockquote className="mb-10 pl-6 border-l-2 italic">
-            "The best and most beautiful things in the world cannot be seen or even touched—they must be felt with the heart."
+            "The best and most beautiful things in the world cannot be seen or
+            even touched—they must be felt with the heart."
           </blockquote>
           <h1
             className="inline-block mb-16 sm:mb-8 w-full font-bold text-4xl text-dark lg:!text-7xl xl:text-6xl dark:text-light capitalize !leading-tight"
@@ -36,7 +37,8 @@ export default function MyProjects() {
               className="inline-block"
               style={{ opacity: 1, transform: "none" }}
             >
-              "... Alone, we can do so little; together, we can do so much."&nbsp;
+              "... Alone, we can do so little; together, we can do so
+              much."&nbsp;
             </span>
             <span
               className="inline-block float-end text-xs italic"
@@ -52,10 +54,9 @@ export default function MyProjects() {
             </span>
           </h1>
         </div>
-
-        
-
       </div>
+
+      {/* TODO: Add event cards here */}
     </main>
   );
 }

@@ -27,7 +27,11 @@ const Navigation = () => {
       label: "videos",
       match: pathname.includes("videos"),
     },
-    { href: "/events", label: "community-events", match: pathname.includes("events") },
+    // {
+    //   href: "/events",
+    //   label: "community-events",
+    //   match: pathname.includes("events"),
+    // },
     { href: "/about", label: "about", match: pathname === "/about" },
     { href: "/contact", label: "contact", match: pathname === "/contact" },
   ];
@@ -43,35 +47,34 @@ const Navigation = () => {
         <h1
           className={cn(
             "text-primary underlined block whitespace-nowrap text-[1.2rem] md:text-2xl font-medium transition focus:outline-none border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
-            pathname === "/" && "!border-4 p-2 !border-black hover:bg-accentDark"
+            pathname === "/" &&
+              "!border-4 p-2 !border-black hover:bg-accentDark"
           )}
         >
           {/* <Link href="/">Port:3000 </Link> */}
           <Link href="/">MA</Link>
         </h1>
+        <div className="flex w-full justify-between items-center lg:p-2">
+          <ul className="hidden lg:flex lg:justify-around lg:capitalize lg:font-semibold">
+            {navItems.map((item, index) => (
+              <li key={index} className={getClassName(item.match)}>
+                {item.href === "#" ? (
+                  item.label
+                ) : (
+                  <Link href={item.href}>{item.label}</Link>
+                )}
+              </li>
+            ))}
 
-        <ul className="hidden lg:flex lg:justify-around lg:capitalize lg:font-semibold">
-          {navItems.map((item, index) => (
-            <li key={index} className={getClassName(item.match)}>
-              {item.href === "#" ? (
-                item.label
-              ) : (
-                <Link href={item.href}>{item.label}</Link>
-              )}
-            </li>
-          ))}
+            {/* <li><ModeToggle /></li> */}
+          </ul>
 
-          {/* <li><ModeToggle /></li> */}
-        </ul>
-
-        <div className="flex justify-items-center items-center">
-          <ModeToggle />
-          <button className="hidden lg:block lg:w-[10rem] lg:p-[10px] lg:border-2 dark:lg:border-white dark:lg:bg-white  lg:border-black lg:bg-black dark:lg:text-black lg:text-white  hover:bg-accentDark hover:text-black border-black !shadow-[5px_5px_1px_1px_#000000]">
-            <a href="/contact">
-            
-            work with me!
-            </a>
-          </button>
+          <div className="flex justify-items-center items-center">
+            <ModeToggle />
+            <button className="hidden lg:block lg:w-[10rem] lg:p-[10px] lg:border-2 dark:lg:border-white dark:lg:bg-white  lg:border-black lg:bg-black dark:lg:text-black lg:text-white  hover:bg-accentDark hover:text-black border-black !shadow-[5px_5px_1px_1px_#000000]">
+              <a href="/contact">work with me!</a>
+            </button>
+          </div>
         </div>
         <Button onClick={() => setisOpen(true)} className="lg:hidden">
           <HamburgerMenuIcon />
@@ -104,7 +107,7 @@ const Navigation = () => {
                   writing
                 </Link>
               </li>
-              <li
+              {/* <li
                 className={cn(
                   "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
                   pathname === "/courses" && "!border-b-4 !border-b-black"
@@ -114,7 +117,7 @@ const Navigation = () => {
               </li>
               <li className="border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer">
                 discord
-              </li>
+              </li> */}
               <li
                 className={cn(
                   "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
@@ -127,6 +130,20 @@ const Navigation = () => {
                   href="/projects"
                 >
                   projects
+                </Link>
+              </li>
+              <li
+                className={cn(
+                  "border-b-4 border-opacity-0 hover:border-b-4 hover:border-b-black hover:cursor-pointer",
+                  pathname.includes("videos") && "!border-b-4 !border-b-black"
+                )}
+              >
+                <Link
+                  className="block"
+                  onClick={() => setisOpen(false)}
+                  href="/videos"
+                >
+                  videos
                 </Link>
               </li>
               <li
@@ -169,7 +186,6 @@ const Navigation = () => {
                       work with me!
                     </Link>
                   </button>
-                  <ModeToggle/>
                 </div>
               </li>
             </ul>

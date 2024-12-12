@@ -62,16 +62,18 @@ export const VideoLayoutTwo = ({ video }) => {
 export const VideoLayoutThree = ({ video }) => {
   return (
     <div className="flex flex-col items-center text-dark dark:text-light group">
-      <iframe
-        width="460"
-        height="280"
-        src={video.links.youtube}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
+      <div className="w-[450px] h-[280px]">
+        <iframe
+          width="100%"
+          height="100%"
+          src={video.links.youtube}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
+      </div>
 
       <div className="flex flex-col mt-4 w-full">
         <span className="font-semibold text-accent text-xs sm:text-sm dark:text-accentDark uppercase">
