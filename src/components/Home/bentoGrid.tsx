@@ -51,7 +51,7 @@ export const BentoGridItem = ({
       )}
     >
       {header}
-      <div className="transition group-hover/bento:translate-x-2 duration-200">
+      <div className="transition group-hover/bento:translate-x-2 duration-200 overflow-scroll">
         {icon}
         <div className="mt-2 mb-2 font-bold font-sans text-neutral-600 dark:text-neutral-200">
           {title}
@@ -83,7 +83,7 @@ export function BentoGridSection() {
   });
 
   return (
-    <BentoGrid className="md:auto-rows-[20rem] mx-auto max-w-4xl">
+    <BentoGrid className="md:auto-rows-[20rem] mx-auto max-w-1/2">
       {bentoContent.map((item, i) => (
         <BentoGridItem
           key={i}
