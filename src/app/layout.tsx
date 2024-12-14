@@ -69,10 +69,10 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
         >
           <Navigation />
           {children}
@@ -83,3 +83,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+// bg-[url('/images/paper.jpg')] dark:bg-[url('/images/slate.jpg')]

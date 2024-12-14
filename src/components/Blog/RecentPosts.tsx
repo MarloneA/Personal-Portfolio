@@ -28,7 +28,7 @@ const RecentPosts = ({ blogs }) => {
           );
         })}
       </div>
-      <button className="border-2 dark:border-white hover:bg-accentDark mt-24 px-6 p-4 border-black rounded-xl w-full  hover:text-black !shadow-[5px_5px_1px_1px_#000000]">
+      <button className="border-2 dark:border-white hover:bg-accentDark mt-24 px-6 p-4 border-black rounded-xl w-full hover:text-black">
         <Link href="/blogs/categories/all">explore more writing</Link>
       </button>
     </section>
