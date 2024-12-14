@@ -44,42 +44,7 @@ export default function Footer() {
   };
 
   if (pathname === "/") {
-    return (
-      <footer className="flex flex-col justify-between items-center m-auto p-4 lg:p-12 max-w-screen-2xl">
-        <div className="border-2 border-black w-full"></div>
-        <div className="flex justify-between w-full flex-col md:flex-row items-center md:items-start">
-          <h2 className="mt-8 font-semibold dark:font-normal text-dark text-lg md:text-2xl dark:text-light self-start">
-            Have a project in mind?
-            
-            Get in touch <Link href="/contact" className="!underline underline-offset-2">
-              here 📞 
-            </Link>{" "}, and let's make it happen.
-          </h2>
-          <ul className="flex justify-between my-10 w-48">
-            <li>
-              <a href="mailto:marlone.akidiva@gmail.com">
-                <IconBrandGmail />
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/MarloneA">
-                <IconBrandGithub />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/@marlonethedev">
-                <IconBrandYoutube />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/marlone-akidiva/">
-                <IconBrandLinkedin />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </footer>
-    );
+    return "";
   }
 
   if (pathname === "/contact") {
@@ -159,14 +124,22 @@ export default function Footer() {
                   Projects
                 </Link>
               </li>
-              {/* <li>
+              <li>
+                <Link
+                  className="hover:border-b-4 hover:border-b-black"
+                  href="/videos"
+                >
+                  Videos
+                </Link>
+              </li>
+              <li>
                 <Link
                   className="hover:border-b-4 hover:border-b-black"
                   href="/about"
                 >
                   About
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link
                   className="hover:border-b-4 hover:border-b-black"
@@ -280,10 +253,7 @@ export default function Footer() {
           <p className="pb-2 font-bold">Sitemap</p>
           <ul className="flex lg:flex-col justify-between lg:justify-around lg:h-48">
             <li>
-              <Link
-                className="hover:border-b-4 hover:border-b-black"
-                href="/"
-              >
+              <Link className="hover:border-b-4 hover:border-b-black" href="/">
                 Home
               </Link>
             </li>
@@ -303,14 +273,22 @@ export default function Footer() {
                 Projects
               </Link>
             </li>
-            {/* <li>
+            <li>
+              <Link
+                className="hover:border-b-4 hover:border-b-black"
+                href="/videos"
+              >
+                Videos
+              </Link>
+            </li>
+            <li>
               <Link
                 className="hover:border-b-4 hover:border-b-black"
                 href="/about"
               >
                 About
               </Link>
-            </li> */}
+            </li>
             <li>
               <Link
                 className="hover:border-b-4 hover:border-b-black"
