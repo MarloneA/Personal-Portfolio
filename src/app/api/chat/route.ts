@@ -1,170 +1,97 @@
+// pages/api/ask.ts
+import type { NextApiRequest, NextApiResponse } from "next";
 import { google } from "googleapis";
-import ffmpeg from "fluent-ffmpeg";
-import fs from "fs";
-import path from "path";
-import { OpenAI } from "openai";
-import { v4 as uuidv4 } from "uuid";
-import ffmpegStatic from "ffmpeg-static";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-console.log("FFmpeg Binary Path:", ffmpegStatic);
+type Data = {
+  answer: string;
+  error?: string;
+};
 
-// ffmpeg.setFfmpegPath(ffmpegStatic);
+// Predefined transcript to set the context
+const transcript = `
+You are a helpful assistant. You will answer questions based on the context provided below. Only answer questions within this scope
+anything outside this scope just simply reply the question is outside the scope of this video. Assume that this is a video transcript and
+as such make sure to make all questions referring to this video as questions referring to the provided transcript.
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+Do not begin your answers with "this content", "the provided transcript", "the transcript" or any such descriptions referencing the content as a transcript. just go straight to the point.
 
-// Directory to store temporary files
-const TEMP_DIR = path.join(process.cwd(), "temp");
+---
+Transcript:
+1. Express.js is a minimal and flexible Node.js web application framework.
+2. It provides a robust set of features to develop web and mobile applications.
+3. Key Features of Express.js:
+   - Middleware: Functions that execute during the request/response cycle.
+   - Routing: Map URLs to specific logic and controllers.
+   - Templating Engines: Support for rendering dynamic HTML.
+   - Error Handling: Centralized mechanism for error processing.
+4. Basic Setup:
+   - Install Express.js using npm: npm install express.
+---
+`;
 
-if (!fs.existsSync(TEMP_DIR)) fs.mkdirSync(TEMP_DIR);
-
-export async function POST(req, res) {
-  if (req.method === "POST") {
-    const { youtubeUrl, userQuestion } = await req.json();
-    console.log("youtubeUrl", youtubeUrl);
-    try {
-      if (youtubeUrl) {
-        // Step 1: Get video metadata
-        const videoId = extractVideoId(youtubeUrl);
-
-        console.log("videoId", videoId);
-
-        const videoInfo = await getYoutubeVideoInfo(videoId);
-
-        console.log("videoInfo", videoInfo);
-
-        // Step 2: Download and transcribe audio
-        const audioFilePath = await downloadYouTubeAudio(videoId);
-        const transcript = await transcribeAudio(audioFilePath);
-        console.log("transcript", transcript);
-
-        // Step 3: Store structured content
-        const structuredData = summarizeTranscript(transcript);
-        console.log("structuredData", structuredData);
-
-        // Return structured data
-        return new Response(
-          JSON.stringify({
-            message: "Video processed successfully.",
-            title: videoInfo.title,
-            structuredData,
-          }),
-          { status: 200 }
-        );
-      } else if (userQuestion) {
-        // Step 4: Answer questions within scope
-        const context = req.body.structuredData;
-        const answer = await getScopedAnswer(userQuestion, context);
-
-        return new Response({
-          answer,
-        });
-      } else {
-        return new Response(JSON.stringify({ error: "Invalid request." }), {
-          status: 400,
-        });
+export async function POST(req: NextApiRequest, res: NextApiResponse<Data>) {
+  console.log("req", req.method);
+  if (req.method !== "POST") {
+    return new Response(
+      JSON.stringify({ answer: "", error: "Method not allowed" }),
+      {
+        status: 405,
       }
-    } catch (error) {
-      console.error(error);
-      return new Response(JSON.stringify({ error: "Internal server error." }), {
-        status: 400,
-      });
-    }
-  } else {
-    return new Response(JSON.stringify({ error: "Method not allowed." }), {
-      status: 400,
-    });
+    );
   }
-}
 
-// Utility functions
-function extractVideoId(url) {
-  const regex =
-    /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-  const match = url.match(regex);
-  if (match && match[1]) return match[1];
-  throw new Error("Invalid YouTube URL.");
-}
+  const { question } = await req.json();
 
-async function getYoutubeVideoInfo(videoId: string) {
-  const youtube = google.youtube({
-    version: "v3",
-    auth: process.env.YOUTUBE_API_KEY,
-  });
-  const response = await youtube.videos.list({
-    id: videoId,
-    part: "snippet,contentDetails",
-  });
+  if (!question || typeof question !== "string") {
+    return new Response(
+      JSON.stringify({ answer: "", error: "Invalid question input" }),
+      {
+        status: 400,
+      }
+    );
+  }
 
-  if (!response.data.items.length) throw new Error("Video not found.");
+  try {
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_PROJECT_API_KEY);
+    const model = genAI.getGenerativeModel({
+      model: "gemini-1.5-flash",
+      systemInstruction: transcript,
+    });
 
-  const video = response.data.items[0];
-  return {
-    title: video.snippet.title,
-    description: video.snippet.description,
-    duration: video.contentDetails.duration,
-  };
-}
+    // Call Google Gemini API
+    const chat = model.startChat({
+      history: [
+        {
+          role: "user",
+          parts: [{ text: "Hello" }],
+        },
+        {
+          role: "model",
+          parts: [{ text: "Great to meet you. What would you like to know?" }],
+        },
+      ],
+    });
 
-async function downloadYouTubeAudio(videoId: string) {
-  const audioFilePath = path.join(TEMP_DIR, `${uuidv4()}.mp3`);
-  const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    let result = await chat.sendMessage(question);
 
-  return new Promise((resolve, reject) => {
-    ffmpeg(videoUrl)
-      .audioCodec("libmp3lame")
-      .save(audioFilePath)
-      .on("end", () => resolve(audioFilePath))
-      .on("error", (error) => reject(error));
-  });
-}
+    const answer = result.response.text() || "No answer found.";
 
-// async function downloadYouTubeAudio(videoId: string) {
-//   const audioFilePath = path.join(TEMP_DIR, `${uuidv4()}.mp3`);
-//   const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-
-//   return new Promise((resolve, reject) => {
-//     ffmpeg(videoUrl)
-//       .setFfmpegPath(ffmpegStatic) // Use bundled ffmpeg binary
-//       .audioCodec("libmp3lame")
-//       .save(audioFilePath)
-//       .on("end", () => resolve(audioFilePath))
-//       .on("error", (error) => reject(error));
-//   });
-// }
-
-async function transcribeAudio(filePath) {
-  const audioData = fs.readFileSync(filePath);
-
-  const response = await openai.audio.transcriptions.create({
-    file: audioData,
-    model: "whisper-1",
-  });
-
-  fs.unlinkSync(filePath); // Clean up temporary file
-  return response.text;
-}
-
-function summarizeTranscript(transcript) {
-  // Call OpenAI to summarize
-  const prompt = `Summarize the following transcript into key points and topics:\n\n${transcript}`;
-
-  const response = openai.completions.create({
-    model: "text-davinci-003",
-    prompt,
-    max_tokens: 300,
-  });
-
-  return response.data.choices[0].text;
-}
-
-async function getScopedAnswer(question, context) {
-  const prompt = `Based on the following context, answer the question only if it's within the scope:\n\nContext: ${context}\n\nQuestion: ${question}\n\nAnswer:`;
-
-  const response = await openai.completions.create({
-    model: "text-davinci-003",
-    prompt,
-    max_tokens: 150,
-  });
-
-  return response.data.choices[0].text.trim();
+    return new Response(
+      JSON.stringify({
+        answer,
+      }),
+      { status: 200 }
+    );
+  } catch (error: any) {
+    console.error("Error communicating with OpenAI API:", error.message);
+    return new Response(
+      JSON.stringify({
+        answer: "",
+        error: "Internal Server Error",
+        message: error.message,
+      }),
+      { status: 500 }
+    );
+  }
 }

@@ -8,7 +8,7 @@ const FeaturedVideos = ({ videos }) => {
   return (
     <section className="flex flex-row justify-between items-center w-full">
       <article className="">
-        <VideoLayoutOne video={sortedVideos[2]} />
+        <VideoLayoutOne video={sortedVideos[0]} />
       </article>
       <ChatInterface />
     </section>

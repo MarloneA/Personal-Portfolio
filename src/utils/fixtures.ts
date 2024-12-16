@@ -6,7 +6,7 @@ export const videos = [
     tags: ["devops", "proxies"],
     links: {
       project: "",
-      youtube: "https://www.youtube.com/embed/lhFvMsy6VX8?si=t8pPdKYpowI",
+      youtube: "https://www.youtube.com/embed/wE3b6WAPt5U?si=Ks7NUqiNXA2P04iD",
       github: "https://www.github.com",
       coverphoto: "/blogs/c-d-x-PDX_a_82obo-unspla.jpg",
     },
@@ -34,6 +34,7 @@ export const videos = [
       ],
       libraries: ["Nginx", "LetsEncrypt", "OpenSSL"],
       resources: ["Official Nginx documentation", "Let's Encrypt guide"],
+      transcript: `answer `,
     },
   },
   {
@@ -69,6 +70,7 @@ export const videos = [
       ],
       libraries: ["Docker CLI", "Docker Compose"],
       resources: ["Docker documentation", "Play with Docker"],
+      transcript: ``,
     },
   },
   {
@@ -102,6 +104,7 @@ export const videos = [
       ],
       libraries: ["React", "React Router"],
       resources: ["React documentation", "Create React App guide"],
+      transcript: ``,
     },
   },
   {
@@ -135,6 +138,7 @@ export const videos = [
       ],
       libraries: ["Express", "Body-parser", "Cors"],
       resources: ["Express.js documentation", "Postman for API testing"],
+      transcript: ``,
     },
   },
   {
@@ -168,6 +172,7 @@ export const videos = [
       ],
       libraries: ["kubectl", "Helm"],
       resources: ["Kubernetes docs", "Cloud-native landscape guide"],
+      transcript: ``,
     },
   },
   {
@@ -202,6 +207,7 @@ export const videos = [
       ],
       libraries: ["React", "Express", "Mongoose"],
       resources: ["MERN docs", "React Redux integration"],
+      transcript: ``,
     },
   },
   {
@@ -235,6 +241,7 @@ export const videos = [
       ],
       libraries: ["Bootstrap", "Tailwind CSS"],
       resources: ["MDN CSS docs", "CanIUse.com"],
+      transcript: ``,
     },
   },
   {
@@ -269,6 +276,7 @@ export const videos = [
       ],
       libraries: ["TypeScript", "TSC"],
       resources: ["TypeScript docs", "TypeScript playground"],
+      transcript: ``,
     },
   },
   {
@@ -302,6 +310,7 @@ export const videos = [
       ],
       libraries: ["Apollo", "GraphQL.js"],
       resources: ["GraphQL docs", "Apollo Client guide"],
+      transcript: ``,
     },
   },
   {
@@ -335,6 +344,7 @@ export const videos = [
       ],
       libraries: ["Node.js", "Cluster module"],
       resources: ["Node.js docs", "Event Loop deep dive"],
+      transcript: ``,
     },
   },
 ];

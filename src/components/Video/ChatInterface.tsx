@@ -16,14 +16,11 @@ export default function ChatInterface() {
     {
       type: "received",
       content:
-        "Hello, how has your day been? I hope you are doing well. Ask me anything about this video and I will answer it.",
+        "Hello, I'm your AI chat assistant bot. Ask me anything about this video and I will answer it.",
     },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [structuredData, setStructuredData] = useState(null);
-
-  console.log("input", input);
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
@@ -33,51 +30,20 @@ export default function ChatInterface() {
     setLoading(true);
 
     try {
-      if (!structuredData) {
-        // Step 1: Send YouTube link to process the video
-        // const response = await axios.post("/api/chat", {
-        //   youtubeUrl: input,
-        // });
+      const response = await axios.post("/api/chat", {
+        question: input,
+      });
 
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            youtubeUrl: input,
-          }),
-        });
+      const { answer } = response.data;
 
-        const { title, structuredData: data } = response.data;
-        setStructuredData(data);
-
-        setMessages((prev) => [
-          ...prev,
-          {
-            type: "received",
-            content: `The video "${title}" has been processed. Ask questions about it.`,
-          },
-        ]);
-      } else {
-        // Step 2: Ask a question about the processed video
-        const response = await axios.post("/api/chat", {
-          userQuestion: input,
-          structuredData,
-        });
-
-        const { answer } = response.data;
-
-        setMessages((prev) => [
-          ...prev,
-          {
-            type: "received",
-            content:
-              answer ||
-              "I'm sorry, I couldn't find an answer to that question.",
-          },
-        ]);
-      }
+      setMessages((prev) => [
+        ...prev,
+        {
+          type: "received",
+          content:
+            answer || "I'm sorry, I couldn't find an answer to that question.",
+        },
+      ]);
     } catch (error) {
       setMessages((prev) => [
         ...prev,
@@ -115,11 +81,7 @@ export default function ChatInterface() {
         className="relative rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring p-1"
       >
         <ChatInput
-          placeholder={
-            structuredData
-              ? "Ask a question about the video..."
-              : "Paste a YouTube link..."
-          }
+          placeholder="Ask a question about the video..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className="min-h-12 resize-none rounded-lg bg-background border-0 p-3 shadow-none focus-visible:ring-0"

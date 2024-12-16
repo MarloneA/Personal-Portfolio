@@ -7,15 +7,15 @@ const ChatMessageList = React.forwardRef<HTMLDivElement, ChatMessageListProps>(
   ({ className, children, ...props }, ref) => (
     <div
       className={cn(
-        "flex flex-col w-full h-[375px] p-4 gap-6 overflow-y-auto",
-        className,
+        "flex flex-col w-full h-[375px] pb-4 gap-6 overflow-y-auto",
+        className
       )}
       ref={ref}
       {...props}
     >
       {children}
     </div>
-  ),
+  )
 );
 
 ChatMessageList.displayName = "ChatMessageList";
