@@ -8,10 +8,10 @@ export default function LandingPage() {
     <div className="w-full my-8">
       <section className="flex lg:flex-row flex-col justify-between w-full">
         <div className="flex flex-col justify-center items-center w-full">
-          <h2 className="sm:block hidden md:pt-4 text-9xl text-black sm:text-3xl md:text-[10rem] !leading-[1] dark:text-white text-center">
+          <h2 className="sm:block md:pt-4 text-6xl sm:text-8xl text-black lg:text-[10rem] !leading-[1] dark:text-white text-center">
             Welcome to my digital space!
           </h2>
-          <h4 className="pt-10 w-[50%] text-center">
+          <h4 className="pt-10 md:w-[50%] w-full text-center">
             I've collaborated with startups that have collectively raised over
             $100 million in funding, giving me a deep understanding of what it
             takes to build exceptional software. Let's connect-whether through a

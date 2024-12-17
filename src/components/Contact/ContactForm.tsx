@@ -16,22 +16,25 @@ export default function ContactForm() {
   const [selectedFiles, setSelectedFiles] = useState([]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-
     const files = e.target.files;
 
-    if (!files) return
+    if (!files) return;
 
-    Promise.all(Array.from(files).map(async (file: any) => { // read from files
+    Promise.all(
+      Array.from(files).map(async (file: any) => {
+        // read from files
 
-      const arrayBuffer = await file.arrayBuffer();
+        const arrayBuffer = await file.arrayBuffer();
 
-      return {
-        filename: file.name,
-        content: Buffer.from(arrayBuffer).toString('base64'), // convert to binary for transport
-        contentType: file.type
-      }
-    })).then(processedFiles => setSelectedFiles(processedFiles))
-        .catch(error => console.log(error));
+        return {
+          filename: file.name,
+          content: Buffer.from(arrayBuffer).toString("base64"), // convert to binary for transport
+          contentType: file.type,
+        };
+      })
+    )
+      .then((processedFiles) => setSelectedFiles(processedFiles))
+      .catch((error) => console.log(error));
   };
 
   const onSubmit = async (data: FormData) => {
@@ -42,7 +45,7 @@ export default function ContactForm() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          ...data, 
+          ...data,
           files: selectedFiles,
         }),
       });
@@ -87,7 +90,8 @@ export default function ContactForm() {
         className="outline-none border-0 p-0 mx-2 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
       />
-      and I’m reaching out to explore the possibility of working together on an exciting project
+      and I’m reaching out to explore the possibility of working together on an
+      exciting project
       <br />
       <br />
       Here are a few details about the project: <br />
@@ -98,12 +102,13 @@ export default function ContactForm() {
         className="w-full my-4 outline-none border-0 p-0 mx-0 focus:ring-0  placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
       />
-      If this aligns with your expertise and interests, I’d love to discuss it further. Feel free to reach out to me at
+      If this aligns with your expertise and interests, I’d love to discuss it
+      further. Feel free to reach out to me at
       <br />
       <input
         type="email"
         placeholder="your@email"
-        {...register("email", {required: true})}
+        {...register("email", { required: true })}
         className="w-1/2 outline-none border-0 p-0 mx-2 my-4 focus:ring-0 placeholder:text-center placeholder:text-lg border-b border-gray 
         focus:border-gray bg-transparent"
       />

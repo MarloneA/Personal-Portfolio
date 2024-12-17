@@ -59,7 +59,7 @@ export default function ChatInterface() {
   };
 
   return (
-    <div className="flex flex-col p-10 pr-0">
+    <div className="flex flex-col py-10 md:p-10 pr-0">
       <ChatMessageList>
         {messages.map((msg, index) => (
           <ChatBubble key={index} variant={msg.type}>

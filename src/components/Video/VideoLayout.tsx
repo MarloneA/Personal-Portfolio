@@ -5,10 +5,10 @@ import { format } from "date-fns";
 
 export const VideoLayoutOne = ({ video }) => {
   return (
-    <div className="inline-block rounded-xl overflow-hidden group">
+    <div className="inline-block rounded-xl w-[90vw] h-[34vh] lg:w-[50vw] lg:h-[485px] overflow-hidden group">
       <iframe
-        width="815"
-        height="485"
+        width="100%"
+        height="100%"
         src={video.links.youtube}
         title="YouTube video player"
         frameBorder="0"
@@ -19,6 +19,8 @@ export const VideoLayoutOne = ({ video }) => {
     </div>
   );
 };
+
+// 815px
 
 export const VideoLayoutTwo = ({ video }) => {
   return (
