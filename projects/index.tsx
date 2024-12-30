@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: "1",
-    projectUrl: "https://saas-starter-kit-swart.vercel.app",
+    projectUrl: "https://getlivekit.site/",
     title: "Starter Kit",
     description: `A collection of App Builders to bootstrap your projects. The boilerplate has all you need to build your SaaS, AI tool, or any other web app and start getting feedback on your product as soon as possible.`,
     githubUrl: "https://github.com/MarloneA/SAAS-Starter-Kit",
@@ -18,7 +18,7 @@ export const projects = [
   },
   {
     id: "2",
-    projectUrl: "https://kaizen-theta.vercel.app/",
+    projectUrl: "https://kaizenapp.site/",
     title: "Kaizen",
     description:
       "Kaizen is a bug reporting and workflow management application that allows companies to resolve feedback loop nightmares ",
